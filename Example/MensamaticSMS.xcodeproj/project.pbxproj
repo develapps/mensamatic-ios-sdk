@@ -30,8 +30,8 @@
 /* Begin PBXFileReference section */
 		490EA876E793FB13D7E6C072 /* Pods_MensamaticSMS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MensamaticSMS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC076FF7A63F58FF181B721 /* Pods-MensamaticSMS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensamaticSMS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MensamaticSMS_Tests/Pods-MensamaticSMS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		55EF12DFE2BCF79F068BCE52 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		5AA431572BB0386E3CABB2E2 /* MensamaticSMS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MensamaticSMS.podspec; path = ../MensamaticSMS.podspec; sourceTree = "<group>"; };
+		55EF12DFE2BCF79F068BCE52 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5AA431572BB0386E3CABB2E2 /* MensamaticSMS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MensamaticSMS.podspec; path = ../MensamaticSMS.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* MensamaticSMS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MensamaticSMS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		607FACE51AFB9204008FA782 /* MensamaticSMS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensamaticSMS_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		74D4C7BC6DA64D4DEFBEDEB6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		74D4C7BC6DA64D4DEFBEDEB6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		7D616A08BFAA402CD197E493 /* Pods_MensamaticSMS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MensamaticSMS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74052808A086F0E5173B5FC /* Pods-MensamaticSMS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensamaticSMS_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MensamaticSMS_Example/Pods-MensamaticSMS_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4F5E3D62570A78CC7FF64B /* Pods-MensamaticSMS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensamaticSMS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MensamaticSMS_Tests/Pods-MensamaticSMS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -518,6 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MensamaticSMS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -533,6 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MensamaticSMS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

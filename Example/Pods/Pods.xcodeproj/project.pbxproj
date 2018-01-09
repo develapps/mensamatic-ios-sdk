@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0609B1E417DA27822A0875F57583E6AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		4DEF33F1F4AA4CBFBC9FE7782B7A3963 /* MensamaticSMS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F15E1D14E94076D19D07E1E7B8EFC19 /* MensamaticSMS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FF21858DF092240ED18F4AE21E0881E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		590E6C6D40064E95643383F7F638DB9A /* Pods-MensamaticSMS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF2BDD0D360E6D137E6AE7B06878A0AA /* Pods-MensamaticSMS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		61D4CDEC1753AB4AD0D0D85557EC9D44 /* Pods-MensamaticSMS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCEE60A5CD39FDFBA2B6026A91C096B /* Pods-MensamaticSMS_Example-dummy.m */; };
-		62643CB3DF27F39C0D3FEBD8AC12D268 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68A84B5A6EEBE1EB999F1520D8C6594 /* ReplaceMe.swift */; };
+		76F107EA1641F32AB19938C06D979723 /* MensamaticSMS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 207300319174F48FDDF7E834941F3882 /* MensamaticSMS-dummy.m */; };
 		9240CF52B15D1DE1A48D1D395BB6CB9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		9A5366DFA87E0A90691D861F8193F6B9 /* Pods-MensamaticSMS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED143298DAC3D9E0EE4B78490E489BCF /* Pods-MensamaticSMS_Tests-dummy.m */; };
-		B7676E5129CBE02838775B585D0E6F96 /* MensamaticSMS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 06032A85430E711D7BABC70EFB49E2A9 /* MensamaticSMS-dummy.m */; };
+		9AB02909B5200CBC668ABBC4AA90F5DE /* SMSMensamaticSMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AC2DE2519131302DDCDCF8AF9DAD6B /* SMSMensamaticSMS.swift */; };
+		9EC4DE22C2892CE6FD3651584184B130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		E2A98150A811B3A07E59BC199209FEAC /* Pods-MensamaticSMS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCF07A5A19BD4E3AD51A047773B5C63 /* Pods-MensamaticSMS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA23C520CD8A14DBF5DC8EFF76D09865 /* MensamaticSMS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 036AF01DBEDF2E078C4E62774EB08033 /* MensamaticSMS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7647742616BF2A126DC252C864124B3 /* SMSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEA6D0928198AF6669DEF0BA5D273E3 /* SMSConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,18 +25,18 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 95A8342677D75BE634FF9FFAC0EC1DD0;
+			remoteGlobalIDString = 195DE3A9D50441063CAB3BE74E533CA6;
 			remoteInfo = MensamaticSMS;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		036AF01DBEDF2E078C4E62774EB08033 /* MensamaticSMS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MensamaticSMS-umbrella.h"; sourceTree = "<group>"; };
-		06032A85430E711D7BABC70EFB49E2A9 /* MensamaticSMS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MensamaticSMS-dummy.m"; sourceTree = "<group>"; };
 		0CCEE60A5CD39FDFBA2B6026A91C096B /* Pods-MensamaticSMS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MensamaticSMS_Example-dummy.m"; sourceTree = "<group>"; };
-		251A7598931B9C8163CE0472A22B57F4 /* MensamaticSMS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MensamaticSMS.modulemap; sourceTree = "<group>"; };
+		0F15E1D14E94076D19D07E1E7B8EFC19 /* MensamaticSMS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MensamaticSMS-umbrella.h"; sourceTree = "<group>"; };
+		17AC2DE2519131302DDCDCF8AF9DAD6B /* SMSMensamaticSMS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SMSMensamaticSMS.swift; path = MensamaticSMS/Classes/SMSMensamaticSMS.swift; sourceTree = "<group>"; };
+		207300319174F48FDDF7E834941F3882 /* MensamaticSMS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MensamaticSMS-dummy.m"; sourceTree = "<group>"; };
+		2EEA6D0928198AF6669DEF0BA5D273E3 /* SMSConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SMSConstants.swift; sourceTree = "<group>"; };
 		3012E2A3F5C390CC1371E88A1D206721 /* Pods_MensamaticSMS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MensamaticSMS_Example.framework; path = "Pods-MensamaticSMS_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A3D57CC2D07A493504402C4F1B08F8F /* MensamaticSMS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MensamaticSMS.xcconfig; sourceTree = "<group>"; };
 		3EB5828E1F5CC3D2DC0AAC048A603068 /* MensamaticSMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MensamaticSMS.framework; path = MensamaticSMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4365E3D836124E74CF95B190EF8CCB38 /* Pods-MensamaticSMS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MensamaticSMS_Example.modulemap"; sourceTree = "<group>"; };
 		54C7BC55B6C154B2FE5A11378959D23F /* Pods-MensamaticSMS_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MensamaticSMS_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -44,35 +45,28 @@
 		5E613842EBDD02A13D84D08AB2C2F2A0 /* Pods-MensamaticSMS_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MensamaticSMS_Example-resources.sh"; sourceTree = "<group>"; };
 		6511705173DCF750A8E80C26EB4F4E12 /* Pods-MensamaticSMS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MensamaticSMS_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6C53025C1A7A8A73F5EE1E2BD3EF7BC9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED56365B4DA0113D2AF564E585228D4 /* Pods-MensamaticSMS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MensamaticSMS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		896AE4BBF2E8596D157566DA2F145E3A /* MensamaticSMS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MensamaticSMS-prefix.pch"; sourceTree = "<group>"; };
 		8C2A812C400E4C7B34410308DA62A3B2 /* Pods-MensamaticSMS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MensamaticSMS_Tests.modulemap"; sourceTree = "<group>"; };
 		8F2641E05954329070892E4C51A6F4CE /* Pods_MensamaticSMS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MensamaticSMS_Tests.framework; path = "Pods-MensamaticSMS_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CD8F8C15820B6C622CACDF6A390AD9 /* Pods-MensamaticSMS_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MensamaticSMS_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		969CBC3F0D7B103863812C24BF750F46 /* Pods-MensamaticSMS_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MensamaticSMS_Example-frameworks.sh"; sourceTree = "<group>"; };
+		9E0C67A51FC7F073202F914E1BEDCDB9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B49F56047D1667CDC3436225CA0C944E /* Pods-MensamaticSMS_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MensamaticSMS_Tests-resources.sh"; sourceTree = "<group>"; };
+		BF29DFC2C3AC770CBA3A5D1D077E5155 /* MensamaticSMS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MensamaticSMS-prefix.pch"; sourceTree = "<group>"; };
 		C68A52E5C68E14A310A85FD163DB98F7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E5CC1D92DD22DC43FE6A457BBB712D /* Pods-MensamaticSMS_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MensamaticSMS_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		CDCF07A5A19BD4E3AD51A047773B5C63 /* Pods-MensamaticSMS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MensamaticSMS_Tests-umbrella.h"; sourceTree = "<group>"; };
 		CF2BDD0D360E6D137E6AE7B06878A0AA /* Pods-MensamaticSMS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MensamaticSMS_Example-umbrella.h"; sourceTree = "<group>"; };
-		D68A84B5A6EEBE1EB999F1520D8C6594 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = MensamaticSMS/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		D7CE10E79D227F2E6376744221E66AE9 /* Pods-MensamaticSMS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MensamaticSMS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DCED73E393A9D5BF43F2D39F0D0F189C /* MensamaticSMS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MensamaticSMS.xcconfig; sourceTree = "<group>"; };
 		DD30D4C824C877A6173FCC3885AE3749 /* Pods-MensamaticSMS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MensamaticSMS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		E90C07A871FB10B77496522F518AB2FF /* MensamaticSMS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MensamaticSMS.modulemap; sourceTree = "<group>"; };
 		ED143298DAC3D9E0EE4B78490E489BCF /* Pods-MensamaticSMS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MensamaticSMS_Tests-dummy.m"; sourceTree = "<group>"; };
 		F4767C469BCD2D755B5276967979AB42 /* Pods-MensamaticSMS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MensamaticSMS_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DF98E40D18C62CD4846F9EB5E2FB8074 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0609B1E417DA27822A0875F57583E6AC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EE0F8FF2F11A20FF1AA7E4B3148B5176 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,21 +83,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F779176255F357C34B059631EF8496B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EC4DE22C2892CE6FD3651584184B130 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11E7FDEC6203BBAE79564D4660EB39E3 /* Support Files */ = {
+		2F2BC12BF0B8E029A55D48EF9F3E5D6F /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6C53025C1A7A8A73F5EE1E2BD3EF7BC9 /* Info.plist */,
-				251A7598931B9C8163CE0472A22B57F4 /* MensamaticSMS.modulemap */,
-				3A3D57CC2D07A493504402C4F1B08F8F /* MensamaticSMS.xcconfig */,
-				06032A85430E711D7BABC70EFB49E2A9 /* MensamaticSMS-dummy.m */,
-				896AE4BBF2E8596D157566DA2F145E3A /* MensamaticSMS-prefix.pch */,
-				036AF01DBEDF2E078C4E62774EB08033 /* MensamaticSMS-umbrella.h */,
+				F785003F2F3F0DB0922D8F64A6EFBDFA /* MensamaticSMS */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/MensamaticSMS";
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		31208DD7371898F7D73A8552933F9DC7 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				2EEA6D0928198AF6669DEF0BA5D273E3 /* SMSConstants.swift */,
+			);
+			name = Constants;
+			path = MensamaticSMS/Classes/Constants;
 			sourceTree = "<group>";
 		};
 		3A3FF35BA2E502DED64AD0BC5FF4240E /* Pods-MensamaticSMS_Example */ = {
@@ -128,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				B267DEA0F3D90229B720F5F920FDCFCA /* Development Pods */,
+				2F2BC12BF0B8E029A55D48EF9F3E5D6F /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				F09B1DE188B9932D6E574303A5BFCCAE /* Products */,
 				8EC4423C4A576303C97D5A307343E8E6 /* Targets Support Files */,
@@ -144,12 +149,18 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B267DEA0F3D90229B720F5F920FDCFCA /* Development Pods */ = {
+		956CF542D25ECF2A5B315624FF23D65F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D46B6A9924501FE6843DBB9A6B08F107 /* MensamaticSMS */,
+				9E0C67A51FC7F073202F914E1BEDCDB9 /* Info.plist */,
+				E90C07A871FB10B77496522F518AB2FF /* MensamaticSMS.modulemap */,
+				DCED73E393A9D5BF43F2D39F0D0F189C /* MensamaticSMS.xcconfig */,
+				207300319174F48FDDF7E834941F3882 /* MensamaticSMS-dummy.m */,
+				BF29DFC2C3AC770CBA3A5D1D077E5155 /* MensamaticSMS-prefix.pch */,
+				0F15E1D14E94076D19D07E1E7B8EFC19 /* MensamaticSMS-umbrella.h */,
 			);
-			name = "Development Pods";
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MensamaticSMS";
 			sourceTree = "<group>";
 		};
 		B3784A380CBB89808F8CCA6B6AC26D30 /* Pods-MensamaticSMS_Tests */ = {
@@ -186,16 +197,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		D46B6A9924501FE6843DBB9A6B08F107 /* MensamaticSMS */ = {
-			isa = PBXGroup;
-			children = (
-				D68A84B5A6EEBE1EB999F1520D8C6594 /* ReplaceMe.swift */,
-				11E7FDEC6203BBAE79564D4660EB39E3 /* Support Files */,
-			);
-			name = MensamaticSMS;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		F09B1DE188B9932D6E574303A5BFCCAE /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +205,17 @@
 				8F2641E05954329070892E4C51A6F4CE /* Pods_MensamaticSMS_Tests.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F785003F2F3F0DB0922D8F64A6EFBDFA /* MensamaticSMS */ = {
+			isa = PBXGroup;
+			children = (
+				17AC2DE2519131302DDCDCF8AF9DAD6B /* SMSMensamaticSMS.swift */,
+				31208DD7371898F7D73A8552933F9DC7 /* Constants */,
+				956CF542D25ECF2A5B315624FF23D65F /* Support Files */,
+			);
+			name = MensamaticSMS;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,17 +237,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4B807F17C19B26F7C29FF9B9783583B9 /* Headers */ = {
+		E87AF467B4F6B55959B92CCBE2A4D068 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA23C520CD8A14DBF5DC8EFF76D09865 /* MensamaticSMS-umbrella.h in Headers */,
+				4DEF33F1F4AA4CBFBC9FE7782B7A3963 /* MensamaticSMS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		195DE3A9D50441063CAB3BE74E533CA6 /* MensamaticSMS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BF52BA63F80008F48862FEBC810BC40 /* Build configuration list for PBXNativeTarget "MensamaticSMS" */;
+			buildPhases = (
+				B169A05F91A7DC379F61B6F68A37A5BE /* Sources */,
+				F779176255F357C34B059631EF8496B9 /* Frameworks */,
+				E87AF467B4F6B55959B92CCBE2A4D068 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MensamaticSMS;
+			productName = MensamaticSMS;
+			productReference = 3EB5828E1F5CC3D2DC0AAC048A603068 /* MensamaticSMS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		485C2488065BFD95FE8E47A6DA7534B1 /* Pods-MensamaticSMS_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7AA77E4CA56D8F0B7B9148C4B9BDEC3 /* Build configuration list for PBXNativeTarget "Pods-MensamaticSMS_Example" */;
@@ -271,23 +300,6 @@
 			productReference = 8F2641E05954329070892E4C51A6F4CE /* Pods_MensamaticSMS_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		95A8342677D75BE634FF9FFAC0EC1DD0 /* MensamaticSMS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9C8AEBB587091C2C620E178BCFD54D9A /* Build configuration list for PBXNativeTarget "MensamaticSMS" */;
-			buildPhases = (
-				4F3AACFDCCA576FC46632ADB65F34BD0 /* Sources */,
-				DF98E40D18C62CD4846F9EB5E2FB8074 /* Frameworks */,
-				4B807F17C19B26F7C29FF9B9783583B9 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MensamaticSMS;
-			productName = MensamaticSMS;
-			productReference = 3EB5828E1F5CC3D2DC0AAC048A603068 /* MensamaticSMS.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -309,7 +321,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				95A8342677D75BE634FF9FFAC0EC1DD0 /* MensamaticSMS */,
+				195DE3A9D50441063CAB3BE74E533CA6 /* MensamaticSMS */,
 				485C2488065BFD95FE8E47A6DA7534B1 /* Pods-MensamaticSMS_Example */,
 				869A44510DE6AD767BAB13275F717957 /* Pods-MensamaticSMS_Tests */,
 			);
@@ -317,15 +329,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4F3AACFDCCA576FC46632ADB65F34BD0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B7676E5129CBE02838775B585D0E6F96 /* MensamaticSMS-dummy.m in Sources */,
-				62643CB3DF27F39C0D3FEBD8AC12D268 /* ReplaceMe.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		6BB8D94CC1B79F428C4457F89F332870 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,51 +345,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B169A05F91A7DC379F61B6F68A37A5BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76F107EA1641F32AB19938C06D979723 /* MensamaticSMS-dummy.m in Sources */,
+				E7647742616BF2A126DC252C864124B3 /* SMSConstants.swift in Sources */,
+				9AB02909B5200CBC668ABBC4AA90F5DE /* SMSMensamaticSMS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		FD8D24A60FC2AFC334511CDEFCDB7709 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MensamaticSMS;
-			target = 95A8342677D75BE634FF9FFAC0EC1DD0 /* MensamaticSMS */;
+			target = 195DE3A9D50441063CAB3BE74E533CA6 /* MensamaticSMS */;
 			targetProxy = 833B3A203BD1298429594BA555841095 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		274795639FAF8AE65F83D73F19C3013E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A3D57CC2D07A493504402C4F1B08F8F /* MensamaticSMS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MensamaticSMS/MensamaticSMS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MensamaticSMS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MensamaticSMS/MensamaticSMS.modulemap";
-				PRODUCT_NAME = MensamaticSMS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2D0184371EB151E3B89F75F4E8B97046 /* Release */ = {
+		4587C4178D953FCEE43A160AAFC219FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4767C469BCD2D755B5276967979AB42 /* Pods-MensamaticSMS_Example.release.xcconfig */;
 			buildSettings = {
@@ -401,7 +382,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-MensamaticSMS_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-MensamaticSMS_Example/Pods-MensamaticSMS_Example.modulemap";
@@ -420,7 +401,7 @@
 			};
 			name = Release;
 		};
-		33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */ = {
+		7C07ED8089F70A31B83996A8910D7F18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -469,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -480,7 +461,39 @@
 			};
 			name = Debug;
 		};
-		731DC216E1A58545B559F6E0A2418060 /* Release */ = {
+		821AB6D26DFCECF7425936DAF8422A60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E409D397F345D850C9E819A35207773 /* Pods-MensamaticSMS_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MensamaticSMS_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MensamaticSMS_Tests/Pods-MensamaticSMS_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MensamaticSMS_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		98F29E7567052F62660DDD7069ADF73C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -526,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
@@ -535,7 +548,7 @@
 			};
 			name = Release;
 		};
-		97869FB01FC0E6E49D32B343BB007D6B /* Release */ = {
+		A285D76CB49FB713C1117F1D788FFB27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7ED56365B4DA0113D2AF564E585228D4 /* Pods-MensamaticSMS_Tests.release.xcconfig */;
 			buildSettings = {
@@ -550,7 +563,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-MensamaticSMS_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-MensamaticSMS_Tests/Pods-MensamaticSMS_Tests.modulemap";
@@ -568,75 +581,9 @@
 			};
 			name = Release;
 		};
-		BB76D920DDB1DBC3B0409993BAE9FE36 /* Debug */ = {
+		B558EBB101F5BAC78597A0D4F15CADE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6511705173DCF750A8E80C26EB4F4E12 /* Pods-MensamaticSMS_Example.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MensamaticSMS_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MensamaticSMS_Example/Pods-MensamaticSMS_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MensamaticSMS_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CC094592BAB2997B201407F11AA8C4E6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E409D397F345D850C9E819A35207773 /* Pods-MensamaticSMS_Tests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MensamaticSMS_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MensamaticSMS_Tests/Pods-MensamaticSMS_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MensamaticSMS_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DB38B9369F174E8A1A8FB96FE90485B0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A3D57CC2D07A493504402C4F1B08F8F /* MensamaticSMS.xcconfig */;
+			baseConfigurationReference = DCED73E393A9D5BF43F2D39F0D0F189C /* MensamaticSMS.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -665,23 +612,89 @@
 			};
 			name = Debug;
 		};
+		C3CA16D5E8CB98651FC030F6348BFB6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCED73E393A9D5BF43F2D39F0D0F189C /* MensamaticSMS.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MensamaticSMS/MensamaticSMS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MensamaticSMS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MensamaticSMS/MensamaticSMS.modulemap";
+				PRODUCT_NAME = MensamaticSMS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FA252E6690CEF942BCC41B4B9F6BB89E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6511705173DCF750A8E80C26EB4F4E12 /* Pods-MensamaticSMS_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MensamaticSMS_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MensamaticSMS_Example/Pods-MensamaticSMS_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MensamaticSMS_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */,
-				731DC216E1A58545B559F6E0A2418060 /* Release */,
+				7C07ED8089F70A31B83996A8910D7F18 /* Debug */,
+				98F29E7567052F62660DDD7069ADF73C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C8AEBB587091C2C620E178BCFD54D9A /* Build configuration list for PBXNativeTarget "MensamaticSMS" */ = {
+		3BF52BA63F80008F48862FEBC810BC40 /* Build configuration list for PBXNativeTarget "MensamaticSMS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DB38B9369F174E8A1A8FB96FE90485B0 /* Debug */,
-				274795639FAF8AE65F83D73F19C3013E /* Release */,
+				B558EBB101F5BAC78597A0D4F15CADE9 /* Debug */,
+				C3CA16D5E8CB98651FC030F6348BFB6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -689,8 +702,8 @@
 		B7AA77E4CA56D8F0B7B9148C4B9BDEC3 /* Build configuration list for PBXNativeTarget "Pods-MensamaticSMS_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BB76D920DDB1DBC3B0409993BAE9FE36 /* Debug */,
-				2D0184371EB151E3B89F75F4E8B97046 /* Release */,
+				FA252E6690CEF942BCC41B4B9F6BB89E /* Debug */,
+				4587C4178D953FCEE43A160AAFC219FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -698,8 +711,8 @@
 		D06892CF0F586D114D454A8F464B41DC /* Build configuration list for PBXNativeTarget "Pods-MensamaticSMS_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC094592BAB2997B201407F11AA8C4E6 /* Debug */,
-				97869FB01FC0E6E49D32B343BB007D6B /* Release */,
+				821AB6D26DFCECF7425936DAF8422A60 /* Debug */,
+				A285D76CB49FB713C1117F1D788FFB27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

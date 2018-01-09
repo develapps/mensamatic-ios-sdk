@@ -1,9 +1,9 @@
 {
   "name": "MensamaticSMS",
   "version": "0.1.0",
-  "summary": "A short description of MensamaticSMS.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Juantri/MensamaticSMS",
+  "summary": "Send SMS by Mensamatic.",
+  "description": "POD for sending SMS by Mensamatic written in Swift 4.",
+  "homepage": "https://github.com/develapps/mensamatic-ios-sdk",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "Juantri": "juantri.jimenez@develapps.com"
   },
   "source": {
-    "git": "https://github.com/Juantri/MensamaticSMS.git",
+    "git": "https://github.com/develapps/mensamatic-ios-sdk.git",
     "tag": "0.1.0"
   },
   "platforms": {
