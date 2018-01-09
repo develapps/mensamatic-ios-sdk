@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2DEB17200523740003AFDD /* SMSExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2DEB16200523740003AFDD /* SMSExtensions.swift */; };
 		4DEF33F1F4AA4CBFBC9FE7782B7A3963 /* MensamaticSMS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F15E1D14E94076D19D07E1E7B8EFC19 /* MensamaticSMS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FF21858DF092240ED18F4AE21E0881E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		590E6C6D40064E95643383F7F638DB9A /* Pods-MensamaticSMS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CF2BDD0D360E6D137E6AE7B06878A0AA /* Pods-MensamaticSMS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,11 +35,12 @@
 		0CCEE60A5CD39FDFBA2B6026A91C096B /* Pods-MensamaticSMS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MensamaticSMS_Example-dummy.m"; sourceTree = "<group>"; };
 		0F15E1D14E94076D19D07E1E7B8EFC19 /* MensamaticSMS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MensamaticSMS-umbrella.h"; sourceTree = "<group>"; };
 		17AC2DE2519131302DDCDCF8AF9DAD6B /* SMSMensamaticSMS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SMSMensamaticSMS.swift; path = MensamaticSMS/Classes/SMSMensamaticSMS.swift; sourceTree = "<group>"; };
+		1C2DEB16200523740003AFDD /* SMSExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSExtensions.swift; sourceTree = "<group>"; };
 		207300319174F48FDDF7E834941F3882 /* MensamaticSMS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MensamaticSMS-dummy.m"; sourceTree = "<group>"; };
 		2EEA6D0928198AF6669DEF0BA5D273E3 /* SMSConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SMSConstants.swift; sourceTree = "<group>"; };
-		3012E2A3F5C390CC1371E88A1D206721 /* Pods_MensamaticSMS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MensamaticSMS_Example.framework; path = "Pods-MensamaticSMS_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EB5828E1F5CC3D2DC0AAC048A603068 /* MensamaticSMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MensamaticSMS.framework; path = MensamaticSMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4365E3D836124E74CF95B190EF8CCB38 /* Pods-MensamaticSMS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MensamaticSMS_Example.modulemap"; sourceTree = "<group>"; };
+		3012E2A3F5C390CC1371E88A1D206721 /* Pods_MensamaticSMS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MensamaticSMS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EB5828E1F5CC3D2DC0AAC048A603068 /* MensamaticSMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MensamaticSMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4365E3D836124E74CF95B190EF8CCB38 /* Pods-MensamaticSMS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MensamaticSMS_Example.modulemap"; sourceTree = "<group>"; };
 		54C7BC55B6C154B2FE5A11378959D23F /* Pods-MensamaticSMS_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MensamaticSMS_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		577F251B6F2A90A099F0F93A91A45940 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E409D397F345D850C9E819A35207773 /* Pods-MensamaticSMS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MensamaticSMS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -46,10 +48,10 @@
 		6511705173DCF750A8E80C26EB4F4E12 /* Pods-MensamaticSMS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MensamaticSMS_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7ED56365B4DA0113D2AF564E585228D4 /* Pods-MensamaticSMS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MensamaticSMS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		8C2A812C400E4C7B34410308DA62A3B2 /* Pods-MensamaticSMS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MensamaticSMS_Tests.modulemap"; sourceTree = "<group>"; };
-		8F2641E05954329070892E4C51A6F4CE /* Pods_MensamaticSMS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MensamaticSMS_Tests.framework; path = "Pods-MensamaticSMS_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2A812C400E4C7B34410308DA62A3B2 /* Pods-MensamaticSMS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MensamaticSMS_Tests.modulemap"; sourceTree = "<group>"; };
+		8F2641E05954329070892E4C51A6F4CE /* Pods_MensamaticSMS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MensamaticSMS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CD8F8C15820B6C622CACDF6A390AD9 /* Pods-MensamaticSMS_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MensamaticSMS_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		969CBC3F0D7B103863812C24BF750F46 /* Pods-MensamaticSMS_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MensamaticSMS_Example-frameworks.sh"; sourceTree = "<group>"; };
 		9E0C67A51FC7F073202F914E1BEDCDB9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B49F56047D1667CDC3436225CA0C944E /* Pods-MensamaticSMS_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MensamaticSMS_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		D7CE10E79D227F2E6376744221E66AE9 /* Pods-MensamaticSMS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MensamaticSMS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DCED73E393A9D5BF43F2D39F0D0F189C /* MensamaticSMS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MensamaticSMS.xcconfig; sourceTree = "<group>"; };
 		DD30D4C824C877A6173FCC3885AE3749 /* Pods-MensamaticSMS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MensamaticSMS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		E90C07A871FB10B77496522F518AB2FF /* MensamaticSMS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MensamaticSMS.modulemap; sourceTree = "<group>"; };
+		E90C07A871FB10B77496522F518AB2FF /* MensamaticSMS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MensamaticSMS.modulemap; sourceTree = "<group>"; };
 		ED143298DAC3D9E0EE4B78490E489BCF /* Pods-MensamaticSMS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MensamaticSMS_Tests-dummy.m"; sourceTree = "<group>"; };
 		F4767C469BCD2D755B5276967979AB42 /* Pods-MensamaticSMS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MensamaticSMS_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,13 +104,14 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		31208DD7371898F7D73A8552933F9DC7 /* Constants */ = {
+		31208DD7371898F7D73A8552933F9DC7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				2EEA6D0928198AF6669DEF0BA5D273E3 /* SMSConstants.swift */,
+				1C2DEB16200523740003AFDD /* SMSExtensions.swift */,
 			);
-			name = Constants;
-			path = MensamaticSMS/Classes/Constants;
+			name = Common;
+			path = MensamaticSMS/Classes/Common;
 			sourceTree = "<group>";
 		};
 		3A3FF35BA2E502DED64AD0BC5FF4240E /* Pods-MensamaticSMS_Example */ = {
@@ -211,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				17AC2DE2519131302DDCDCF8AF9DAD6B /* SMSMensamaticSMS.swift */,
-				31208DD7371898F7D73A8552933F9DC7 /* Constants */,
+				31208DD7371898F7D73A8552933F9DC7 /* Common */,
 				956CF542D25ECF2A5B315624FF23D65F /* Support Files */,
 			);
 			name = MensamaticSMS;
@@ -307,7 +310,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0920;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -350,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F107EA1641F32AB19938C06D979723 /* MensamaticSMS-dummy.m in Sources */,
+				1C2DEB17200523740003AFDD /* SMSExtensions.swift in Sources */,
 				E7647742616BF2A126DC252C864124B3 /* SMSConstants.swift in Sources */,
 				9AB02909B5200CBC668ABBC4AA90F5DE /* SMSMensamaticSMS.swift in Sources */,
 			);
@@ -544,6 +548,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

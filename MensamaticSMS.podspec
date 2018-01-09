@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'MensamaticSMS'
   s.version          = '0.1.0'
-  s.summary          = 'Send SMS by Mensamatic.'
+  s.summary          = 'This library allows to manage Mensamatic SMS API.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'MensamaticSMS/Classes/**/*'
+  s.source_files = 'MensamaticSMS/Classes/**/*.swift'
   
   # s.resource_bundles = {
   #   'MensamaticSMS' => ['MensamaticSMS/Assets/*.png']

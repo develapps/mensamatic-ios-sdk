@@ -20,8 +20,52 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UIe-6Y-Rtv">
+                                <rect key="frame" x="20" y="40" width="335" height="607"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LHK-px-QQr">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdd-L8-0rJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="50"/>
+                                                <state key="normal" title="Get"/>
+                                                <connections>
+                                                    <action selector="getAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nah-g3-9jE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VG4-19-T4v">
+                                                <rect key="frame" x="172.5" y="0.0" width="162.5" height="50"/>
+                                                <state key="normal" title="Post"/>
+                                                <connections>
+                                                    <action selector="postAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aoG-E7-ip7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="V46-A5-GPt"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFe-4n-oAr">
+                                        <rect key="frame" x="0.0" y="70" width="335" height="537"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="UIe-6Y-Rtv" secondAttribute="trailing" constant="20" id="9aI-Q7-wGj"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="UIe-6Y-Rtv" secondAttribute="bottom" constant="20" id="E1N-AF-v6j"/>
+                            <constraint firstItem="UIe-6Y-Rtv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="I12-jn-e3l"/>
+                            <constraint firstItem="UIe-6Y-Rtv" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="iwn-Vh-CJL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textLabel" destination="qFe-4n-oAr" id="0Tu-O0-PeX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
