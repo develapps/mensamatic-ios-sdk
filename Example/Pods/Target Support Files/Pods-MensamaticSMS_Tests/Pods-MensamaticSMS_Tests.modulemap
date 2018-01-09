@@ -1,0 +1,6 @@
+framework module Pods_MensamaticSMS_Tests {
+  umbrella header "Pods-MensamaticSMS_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MensamaticSMS_Example' do
+  pod 'MensamaticSMS', :path => '../'
+
+  target 'MensamaticSMS_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
