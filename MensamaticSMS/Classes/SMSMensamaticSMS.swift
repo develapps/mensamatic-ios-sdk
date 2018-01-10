@@ -13,7 +13,7 @@ import Foundation
 
 public enum SMSNetworkProviderResult {
     case successWithData(Any?)
-    case error(SMSNetworkError)
+    case error(SMSNetworkError) //codigo y descripción error 
 }
 
 public enum SMSNetworkError: Error, LocalizedError, CustomStringConvertible {
@@ -208,7 +208,7 @@ public func sms_getData(completion: @escaping(SMSNetworkProviderResult)->()) {
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = SMS_headers2()
     
-    URLSession.shared.dataTask(with: url) { (data, response, error) in
+    URLSession.shared.dataTask(with: request) { (data, response, error) in
         if error != nil {
             completion(.error(SMSNetworkError.generic))
         }
@@ -416,13 +416,23 @@ public func sms_listIncomingSMS(completion: @escaping(SMSNetworkProviderResult)-
     
 }
 
-public func sms_send2WaySMS(id: String?, destination: String?, source: String?, from_date: String?, to_date: String?, date: Date?, sent: Bool?, sent_status: String?, completion: @escaping(SMSNetworkProviderResult)->()) {
+public func sms_send2WaySMS(destination: String, body: String, source: String, unicode: Bool?, date: Date?, completion: @escaping(SMSNetworkProviderResult)->()) {
     
     guard let url = URL(string: APIEndpointUrl.send2waySMS.SMS_endpointUrl() ) else { return }
     
     var request : URLRequest = URLRequest(url: url)
     request.httpMethod = "POST"
     request.allHTTPHeaderFields = SMS_headers()
+    
+    var dic: [String:Any] = ["destination" : destination, "body" : body, "source" : source, "unicode" : false]
+    
+    if let unicode = unicode {
+        dic["unicode"] = "\(unicode)"
+    }
+    
+    if let date = date {
+        dic["scheduled_datetime"] = date.sms_dateToBackendFormat()
+    }
     
     URLSession.shared.dataTask(with: request) { (data, response, error) in
         completion(SMSResponseTreatment(data: data, response: response, error: error))
