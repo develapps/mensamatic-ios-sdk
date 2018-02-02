@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="baF-Vn-l69">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Send View Controller-->
+        <scene sceneID="o99-kX-vd5">
+            <objects>
+                <viewController storyboardIdentifier="SendViewController" id="baF-Vn-l69" customClass="SendViewController" customModule="MensamaticSMS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nnk-zk-D45">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dyY-a4-okc">
+                                <rect key="frame" x="30" y="40" width="315" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="m0i-6B-7eR"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="amo-hB-gIf">
+                                <rect key="frame" x="30" y="125.5" width="315" height="110"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="O3N-ee-5OY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body SMS (required)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH6-l8-QPX">
+                                <rect key="frame" x="30" y="100" width="295" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule SMS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnJ-Gs-9Nv">
+                                <rect key="frame" x="30" y="245.5" width="295" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A4g-bW-Kba">
+                                <rect key="frame" x="65" y="277.5" width="8" height="17"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnC-th-dDk">
+                                <rect key="frame" x="30" y="271" width="78" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wdS-2Q-Haw"/>
+                                </constraints>
+                                <state key="normal" title="Select date"/>
+                                <connections>
+                                    <action selector="openDatePicker:" destination="baF-Vn-l69" eventType="touchUpInside" id="BUT-Fk-8kI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VII-uX-VAE">
+                                <rect key="frame" x="309" y="276" width="36" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source (required)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLO-Kj-Q34">
+                                <rect key="frame" x="30" y="311" width="315" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="MENSAMATIC" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PqP-LA-t4q">
+                                <rect key="frame" x="30" y="341.5" width="315" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="D1A-Pp-Zr9"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7BI-sA-okk">
+                                <rect key="frame" x="50" y="537" width="275" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kii-Te-ahL">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="30"/>
+                                        <state key="normal" title="Send SMS"/>
+                                        <connections>
+                                            <action selector="sendSMS:" destination="baF-Vn-l69" eventType="touchUpInside" id="GWo-2t-MiT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zh-xm-LGQ">
+                                        <rect key="frame" x="0.0" y="40" width="275" height="30"/>
+                                        <state key="normal" title="Send Unicode SMS"/>
+                                        <connections>
+                                            <action selector="sendUnicodeSMS:" destination="baF-Vn-l69" eventType="touchUpInside" id="9ja-GM-F37"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWx-FP-Eyh">
+                                        <rect key="frame" x="0.0" y="80" width="275" height="30"/>
+                                        <state key="normal" title="Send Certificated SMS"/>
+                                        <connections>
+                                            <action selector="sendCertificatedSMS:" destination="baF-Vn-l69" eventType="touchUpInside" id="25D-zd-KiM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o2g-YT-egg" firstAttribute="trailing" secondItem="7BI-sA-okk" secondAttribute="trailing" constant="50" id="1R1-9A-yuB"/>
+                            <constraint firstItem="dyY-a4-okc" firstAttribute="top" secondItem="o2g-YT-egg" secondAttribute="top" constant="20" id="3dl-Za-MwK"/>
+                            <constraint firstItem="amo-hB-gIf" firstAttribute="top" secondItem="fH6-l8-QPX" secondAttribute="bottom" constant="5" id="8ET-83-qKV"/>
+                            <constraint firstItem="fH6-l8-QPX" firstAttribute="leading" secondItem="o2g-YT-egg" secondAttribute="leading" constant="30" id="BVw-Yr-4PO"/>
+                            <constraint firstItem="amo-hB-gIf" firstAttribute="leading" secondItem="o2g-YT-egg" secondAttribute="leading" constant="30" id="Dd3-ma-nMO"/>
+                            <constraint firstItem="CLO-Kj-Q34" firstAttribute="top" secondItem="bnC-th-dDk" secondAttribute="bottom" constant="10" id="Gf0-Kh-f5U"/>
+                            <constraint firstItem="o2g-YT-egg" firstAttribute="trailing" secondItem="dyY-a4-okc" secondAttribute="trailing" constant="30" id="H5f-oK-jlg"/>
+                            <constraint firstItem="CLO-Kj-Q34" firstAttribute="leading" secondItem="o2g-YT-egg" secondAttribute="leading" constant="30" id="Hzp-Ow-J5t"/>
+                            <constraint firstItem="A4g-bW-Kba" firstAttribute="centerY" secondItem="bnC-th-dDk" secondAttribute="centerY" id="I8h-Kj-P8C"/>
+                            <constraint firstItem="o2g-YT-egg" firstAttribute="bottom" secondItem="7BI-sA-okk" secondAttribute="bottom" constant="20" id="K1g-qj-sGe"/>
+                            <constraint firstItem="PqP-LA-t4q" firstAttribute="leading" secondItem="o2g-YT-egg" secondAttribute="leading" constant="30" id="Nno-dZ-uYd"/>
+                            <constraint firstItem="bnJ-Gs-9Nv" firstAttribute="top" secondItem="amo-hB-gIf" secondAttribute="bottom" constant="10" id="OFC-jn-krz"/>
+                            <constraint firstItem="7BI-sA-okk" firstAttribute="leading" secondItem="o2g-YT-egg" secondAttribute="leading" constant="50" id="OIo-fB-37x"/>
+                            <constraint firstItem="o2g-YT-egg" firstAttribute="trailing" secondItem="CLO-Kj-Q34" secondAttribute="trailing" constant="30" id="PNu-nq-SBf"/>
+                            <constraint firstItem="o2g-YT-egg" firstAttribute="trailing" secondItem="amo-hB-gIf" secondAttribute="trailing" constant="30" id="ReK-kU-N24"/>
+                            <constraint firstItem="bnC-th-dDk" firstAttribute="leading" secondItem="o2g-YT-egg" secondAttribute="leading" constant="30" id="T1Y-WP-zaM"/>
+                            <constraint firstItem="o2g-YT-egg" firstAttribute="trailing" secondItem="VII-uX-VAE" secondAttribute="trailing" constant="30" id="UFy-4U-EYi"/>
+                            <constraint firstItem="fH6-l8-QPX" firstAttribute="top" secondItem="dyY-a4-okc" secondAttribute="bottom" constant="20" id="UXH-Me-Mrn"/>
+                            <constraint firstItem="o2g-YT-egg" firstAttribute="trailing" secondItem="fH6-l8-QPX" secondAttribute="trailing" constant="50" id="VT3-MU-GGf"/>
+                            <constraint firstItem="7BI-sA-okk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PqP-LA-t4q" secondAttribute="bottom" constant="10" id="YMG-Rr-r4B"/>
+                            <constraint firstItem="bnJ-Gs-9Nv" firstAttribute="leading" secondItem="o2g-YT-egg" secondAttribute="leading" constant="30" id="aMS-Th-Cbk"/>
+                            <constraint firstItem="VII-uX-VAE" firstAttribute="centerY" secondItem="bnC-th-dDk" secondAttribute="centerY" id="cPf-JX-iU2"/>
+                            <constraint firstItem="PqP-LA-t4q" firstAttribute="top" secondItem="CLO-Kj-Q34" secondAttribute="bottom" constant="10" id="jPY-lZ-ACN"/>
+                            <constraint firstItem="A4g-bW-Kba" firstAttribute="centerX" secondItem="bnC-th-dDk" secondAttribute="centerX" id="pNv-wR-GLo"/>
+                            <constraint firstItem="o2g-YT-egg" firstAttribute="trailing" secondItem="bnJ-Gs-9Nv" secondAttribute="trailing" constant="50" id="thk-6b-FcD"/>
+                            <constraint firstItem="o2g-YT-egg" firstAttribute="trailing" secondItem="PqP-LA-t4q" secondAttribute="trailing" constant="30" id="udT-Ee-d1l"/>
+                            <constraint firstItem="dyY-a4-okc" firstAttribute="leading" secondItem="o2g-YT-egg" secondAttribute="leading" constant="30" id="xYl-mO-7NT"/>
+                            <constraint firstItem="bnC-th-dDk" firstAttribute="top" secondItem="bnJ-Gs-9Nv" secondAttribute="bottom" constant="5" id="yke-aF-RFG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o2g-YT-egg"/>
+                    </view>
+                    <connections>
+                        <outlet property="bodyTextView" destination="amo-hB-gIf" id="D1b-tY-0CD"/>
+                        <outlet property="dateSelectedLabel" destination="VII-uX-VAE" id="Ck1-ip-fPD"/>
+                        <outlet property="dateTextField" destination="A4g-bW-Kba" id="bj3-ar-DPU"/>
+                        <outlet property="phoneTextField" destination="dyY-a4-okc" id="dyb-Ka-Oy3"/>
+                        <outlet property="sourceTextField" destination="PqP-LA-t4q" id="1Uw-Hz-3Fj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jEs-N4-Skx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="-218.1409295352324"/>
+        </scene>
+    </scenes>
+</document>

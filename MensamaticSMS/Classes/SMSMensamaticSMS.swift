@@ -32,7 +32,7 @@ public enum SMSNetworkError: Error, LocalizedError, CustomStringConvertible {
         case .noMandatoryParameter(let object):
             return NSLocalizedString("No se incluyó el parámetro obligatorio ", comment: "") + "\(object)"
         case .errorFromAPI(let json):
-            if let message = json["resultMessage"] as? String {
+            if let message = json["message"] as? String {
                 return message
             }
             return NSLocalizedString("Ocurrió un error.", comment:"")
@@ -123,27 +123,20 @@ private func SMS_headers2() -> Dictionary<String,String> {
 // MARK: Authentication
 //--------------------------------------------------------
 
-/*!
- @function       smsAuthenticate
- @abstract       smsAuthenticate
- @discussion     Authentication for obtain token
- @param          user
- User for authenticate
- @param          password
- Password for authenticate
- @result         an Array of Employee
- */
-
+/// Gets a Token to grant access to the API.
+///
+/// - Parameters:
+///   - user: user name
+///   - password: user password
+///   - completion: method returns success or error with the error information
 public func sms_authentication(user: String, password: String, completion: @escaping(SMSNetworkProviderResult)->()) {
-    
-    let stringURL = "https://serene-savannah-42462.herokuapp.com/api/login"
-    guard let url : URL = URL(string: kProduction ? APIEndpointUrl.signIn.SMS_endpointUrl() : stringURL) else { return }
-    
+
+    guard let url : URL = URL(string: APIEndpointUrl.signIn.SMS_endpointUrl() ) else { return }
+
     var request : URLRequest = URLRequest(url: url)
     request.httpMethod = "POST"
     
-//    let dic = ["username": user, "password" : password]
-    let dic = kProduction ? ["username": user, "password" : password] : ["email" : user, "password" : password, "gethash" : "true"]
+    let dic = ["username": user, "password" : password]
     
     guard let body = sms_encodeParameters(dict: dic) else {
         completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
@@ -162,123 +155,48 @@ public func sms_authentication(user: String, password: String, completion: @esca
         
         guard let data = data else {
             print("Error parsing data")
-            completion(.error(.generic))
+            DispatchQueue.main.async {
+                completion(.error(.generic))
+            }
             return
         }
         
         do {
             guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
-                completion(.error(SMSNetworkError.generic))
+                DispatchQueue.main.async {
+                    completion(.error(SMSNetworkError.generic))
+                }
                 return
             }
             
             if let message = json["message"] as? String {
-                completion(.error(SMSNetworkError.errorFromAPI(["message" : message])))
+                DispatchQueue.main.async {
+                    completion(.error(SMSNetworkError.errorFromAPI(["message" : message])))
+                }
                 return
             }
             
             guard let token = json["token"] as? String else {
-                completion(.error(SMSNetworkError.generic))
+                DispatchQueue.main.async {
+                    completion(.error(SMSNetworkError.generic))
+                }
                 return
             }
             userToken = token
             print(token)
-            completion(.successWithData(""))
+            DispatchQueue.main.async {
+                completion(.successWithData(""))
+            }
             
             
         } catch let error {
             print(error)
-            completion(.error(SMSNetworkError.generic))
+            DispatchQueue.main.async {
+                completion(.error(SMSNetworkError.generic))
+            }
         }
         
         }.resume()
-    
-}
-
-//--------------------------------------------------------
-// MARK: Pruebas
-//--------------------------------------------------------
-
-public func sms_getData(completion: @escaping(SMSNetworkProviderResult)->()) {
-    
-    let urlString = "https://serene-savannah-42462.herokuapp.com/api/artists/1"
-    guard let url = URL(string: urlString) else { return }
-    
-    var request : URLRequest = URLRequest(url: url)
-    request.httpMethod = "GET"
-    request.allHTTPHeaderFields = SMS_headers2()
-    
-    URLSession.shared.dataTask(with: request) { (data, response, error) in
-        if error != nil {
-            completion(.error(SMSNetworkError.generic))
-        }
-        
-        guard let data = data else {
-            completion(.error(SMSNetworkError.generic))
-            return
-        }
-        
-        do {
-            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
-                completion(.error(SMSNetworkError.parsing(String.init(data: data, encoding: .utf8) ?? "Error")))
-                return
-            }
-            
-            completion(.successWithData(json))
-            
-        } catch let error {
-            print(error)
-            completion(.error(SMSNetworkError.generic))
-        }
-        
-        
-        }.resume()
-    
-}
-
-
-
-public func sms_postData(completion: @escaping(SMSNetworkProviderResult)->()) {
-    
-    let urlString : String = "https://serene-savannah-42462.herokuapp.com/api/artist"
-    guard let url = URL(string: urlString) else { return }
-    
-    var request : URLRequest = URLRequest(url: url)
-    request.httpMethod = "POST"
-    
-    let dic = ["name":"Artista 8", "description" : "Descripción artista 8"]
-    guard let body = sms_encodeParameters(dict: dic) else {
-        completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
-        return
-    }
-
-    request.httpBody = body.data(using: .utf8)
-    request.allHTTPHeaderFields = SMS_headers2()
-    
-    URLSession.shared.dataTask(with: request) { (data, response, error) in
-        if error != nil {
-            completion(.error(SMSNetworkError.generic))
-        }
-        
-        guard let data = data else {
-            completion(.error(SMSNetworkError.generic))
-            return
-        }
-        
-        do {
-            guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
-                completion(.error(SMSNetworkError.parsing(String.init(data: data, encoding: .utf8) ?? "Error")))
-                return
-            }
-            
-            completion(.successWithData( json ))
-            
-        } catch let error {
-            print(error)
-            completion(.error(SMSNetworkError.generic))
-        }
-        
-    }.resume()
     
 }
 
@@ -300,14 +218,18 @@ public func sms_sendSMS(destination: String, body: String, source: String, date:
     }
     
     guard let body = sms_encodeParameters(dict: dic) else {
-        completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
+        DispatchQueue.main.async {
+            completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
+        }
         return
     }
     
     request.httpBody = body.data(using: .utf8)
     
     URLSession.shared.dataTask(with: request) { (data, response, error) in
-        completion(SMSResponseTreatment(data: data, response: response, error: error))
+        DispatchQueue.main.async {
+            completion(SMSResponseTreatment(data: data, response: response, error: error))
+        }
         }.resume()
     
 }
@@ -327,14 +249,18 @@ public func sms_sendUnicodeSMS(destination: String, body: String, source: String
     }
     
     guard let body = sms_encodeParameters(dict: dic) else {
-        completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
+        DispatchQueue.main.async {
+            completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
+        }
         return
     }
     
     request.httpBody = body.data(using: .utf8)
     
     URLSession.shared.dataTask(with: request) { (data, response, error) in
-        completion(SMSResponseTreatment(data: data, response: response, error: error))
+        DispatchQueue.main.async {
+            completion(SMSResponseTreatment(data: data, response: response, error: error))
+        }
         }.resume()
     
 }
@@ -347,10 +273,12 @@ public func sms_sendCertificatedSMS(destination: String, body: String, source: S
     request.httpMethod = "POST"
     request.allHTTPHeaderFields = SMS_headers()
     
-    var dic = ["destination" : destination, "body" : body, "source" : source]
+    var dic: [String:Any] = ["destination" : destination, "body" : body, "source" : source]
     
     if let typeSMS = typeSMS {
         dic["type_sms"] = "\(typeSMS)"
+    } else {
+        dic["type_sms"] = 0
     }
     
     if let receipt = receipt {
@@ -362,14 +290,18 @@ public func sms_sendCertificatedSMS(destination: String, body: String, source: S
     }
     
     guard let body = sms_encodeParameters(dict: dic) else {
-        completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
+        DispatchQueue.main.async {
+            completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
+        }
         return
     }
     
     request.httpBody = body.data(using: .utf8)
     
     URLSession.shared.dataTask(with: request) { (data, response, error) in
-        completion(SMSResponseTreatment(data: data, response: response, error: error))
+        DispatchQueue.main.async {
+            completion(SMSResponseTreatment(data: data, response: response, error: error))
+        }
         }.resume()
     
 }
@@ -397,7 +329,9 @@ public func sms_listSentSMS(id: String?, destination: String?, source: String?, 
 //    }
     
     URLSession.shared.dataTask(with: request) { (data, response, error) in
-        completion(SMSResponseTreatment(data: data, response: response, error: error))
+        DispatchQueue.main.async {
+            completion(SMSResponseTreatment(data: data, response: response, error: error))
+        }
         }.resume()
     
 }
@@ -411,7 +345,9 @@ public func sms_listIncomingSMS(completion: @escaping(SMSNetworkProviderResult)-
     request.allHTTPHeaderFields = SMS_headers()
     
     URLSession.shared.dataTask(with: request) { (data, response, error) in
-        completion(SMSResponseTreatment(data: data, response: response, error: error))
+        DispatchQueue.main.async {
+            completion(SMSResponseTreatment(data: data, response: response, error: error))
+        }
         }.resume()
     
 }
@@ -427,15 +363,104 @@ public func sms_send2WaySMS(destination: String, body: String, source: String, u
     var dic: [String:Any] = ["destination" : destination, "body" : body, "source" : source, "unicode" : false]
     
     if let unicode = unicode {
-        dic["unicode"] = "\(unicode)"
+        dic["unicode"] = unicode
     }
     
     if let date = date {
         dic["scheduled_datetime"] = date.sms_dateToBackendFormat()
     }
     
+    guard let body = sms_encodeParameters(dict: dic) else {
+        DispatchQueue.main.async {
+            completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
+        }
+        return
+    }
+    
+    request.httpBody = body.data(using: .utf8)
+    
     URLSession.shared.dataTask(with: request) { (data, response, error) in
-        completion(SMSResponseTreatment(data: data, response: response, error: error))
+        DispatchQueue.main.async {
+            completion(SMSResponseTreatment(data: data, response: response, error: error))
+        }
+        }.resume()
+    
+}
+
+public func sms_calculateCostPerSMS(body: String, unicode: Bool?, type: Int?, completion: @escaping(SMSNetworkProviderResult)->()) {
+    
+    guard let url = URL(string: APIEndpointUrl.calculateCostPerSMS.SMS_endpointUrl() ) else { return }
+    
+    var request : URLRequest = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.allHTTPHeaderFields = SMS_headers()
+    
+    var dic: [String:Any] = ["body" : body, "unicode" : false]
+    
+    if let unicode = unicode {
+        dic["unicode"] = unicode
+    }
+    
+    if let type = type {
+        dic["type_sms"] = type
+    }
+    
+    guard let body = sms_encodeParameters(dict: dic) else {
+        DispatchQueue.main.async {
+            completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
+        }
+        return
+    }
+    
+    request.httpBody = body.data(using: .utf8)
+    
+    URLSession.shared.dataTask(with: request) { (data, response, error) in
+        DispatchQueue.main.async {
+            completion(SMSResponseTreatment(data: data, response: response, error: error))
+        }
+        }.resume()
+    
+}
+
+public func sms_cancelScheduledSMS(id: String, completion: @escaping(SMSNetworkProviderResult)->()) {
+    
+    guard let url = URL(string: APIEndpointUrl.cancelScheduleSMS.SMS_endpointUrl() ) else { return }
+    
+    var request : URLRequest = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.allHTTPHeaderFields = SMS_headers()
+    
+    let dic: [String:Any] = ["id" : id]
+    
+    guard let body = sms_encodeParameters(dict: dic) else {
+        DispatchQueue.main.async {
+            completion(SMSNetworkProviderResult.error(SMSNetworkError.parsing(dic.debugDescription)))
+        }
+        return
+    }
+    
+    request.httpBody = body.data(using: .utf8)
+    
+    URLSession.shared.dataTask(with: request) { (data, response, error) in
+        DispatchQueue.main.async {
+            completion(SMSResponseTreatment(data: data, response: response, error: error))
+        }
+        }.resume()
+    
+}
+
+public func sms_currentUserCredits(completion: @escaping(SMSNetworkProviderResult)->()) {
+    
+    guard let url = URL(string: APIEndpointUrl.currentUserCredits.SMS_endpointUrl() ) else { return }
+    
+    var request : URLRequest = URLRequest(url: url)
+    request.httpMethod = "GET"
+    request.allHTTPHeaderFields = SMS_headers()
+    
+    URLSession.shared.dataTask(with: request) { (data, response, error) in
+        DispatchQueue.main.async {
+            completion(SMSResponseTreatment(data: data, response: response, error: error))
+        }
         }.resume()
     
 }

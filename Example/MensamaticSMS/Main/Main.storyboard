@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yqg-Il-Uyq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="780-zr-Y2i">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="Dc9-g1-5EC" customClass="MainViewController" customModule="MensamaticSMS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hIV-7c-7yI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="etI-f0-Gco">
+                                <rect key="frame" x="20" y="325.5" width="335" height="321.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jW-Lc-WWl">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <state key="normal" title="List Sent SMS"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List sent SMS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRT-51-5EB">
+                                        <rect key="frame" x="0.0" y="40" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De3-qK-IYb">
+                                        <rect key="frame" x="0.0" y="70.5" width="335" height="30"/>
+                                        <state key="normal" title="List Incoming SMS"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List incoming SMS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWe-Eb-VeJ">
+                                        <rect key="frame" x="0.0" y="110.5" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgo-5L-bgz">
+                                        <rect key="frame" x="0.0" y="141" width="335" height="30"/>
+                                        <state key="normal" title="Send 2waySMS"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQF-IL-VGw">
+                                        <rect key="frame" x="0.0" y="181" width="335" height="30"/>
+                                        <state key="normal" title="Calculate Cost per SMS "/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHW-eJ-063">
+                                        <rect key="frame" x="0.0" y="221" width="335" height="30"/>
+                                        <state key="normal" title="Cancel scheduled SMS"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6Y-35-y7K">
+                                        <rect key="frame" x="0.0" y="261" width="335" height="30"/>
+                                        <state key="normal" title="Current user credits"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current user credits:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uy9-MV-4Wq">
+                                        <rect key="frame" x="0.0" y="301" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnC-gl-C2D">
+                                <rect key="frame" x="50" y="104" width="275" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ynv-6T-4R1"/>
+                                </constraints>
+                                <state key="normal" title="Send SMS"/>
+                                <connections>
+                                    <action selector="openSendView:" destination="Dc9-g1-5EC" eventType="touchUpInside" id="6pz-eL-srB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MnC-gl-C2D" firstAttribute="leading" secondItem="OqI-h1-0Nj" secondAttribute="leading" constant="50" id="8bs-ih-1Ad"/>
+                            <constraint firstItem="MnC-gl-C2D" firstAttribute="top" secondItem="OqI-h1-0Nj" secondAttribute="top" constant="40" id="8lY-Ch-yFK"/>
+                            <constraint firstItem="OqI-h1-0Nj" firstAttribute="trailing" secondItem="MnC-gl-C2D" secondAttribute="trailing" constant="50" id="bbs-Gw-5NB"/>
+                            <constraint firstItem="OqI-h1-0Nj" firstAttribute="trailing" secondItem="etI-f0-Gco" secondAttribute="trailing" constant="20" id="i6z-5x-iUy"/>
+                            <constraint firstItem="etI-f0-Gco" firstAttribute="leading" secondItem="OqI-h1-0Nj" secondAttribute="leading" constant="20" id="rmd-g9-zFb"/>
+                            <constraint firstItem="OqI-h1-0Nj" firstAttribute="bottom" secondItem="etI-f0-Gco" secondAttribute="bottom" constant="20" id="thB-DS-zM6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OqI-h1-0Nj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W3X-u6-sd6"/>
+                    <connections>
+                        <segue destination="FIi-MY-aoO" kind="show" identifier="SendSegue" id="bYd-nj-GI8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vWF-7c-F9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="80.50974512743629"/>
+        </scene>
+        <!--Send-->
+        <scene sceneID="lP8-45-vcN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Send" id="FIi-MY-aoO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D7Q-bM-cOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010.4" y="80.059970014992516"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tJc-wE-zGB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yqg-Il-Uyq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3B8-Cf-BTU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Dc9-g1-5EC" kind="relationship" relationship="rootViewController" id="XeE-uq-n3S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHo-Pw-z3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-305" y="81"/>
+        </scene>
+    </scenes>
+</document>

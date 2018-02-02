@@ -11,7 +11,7 @@ import Foundation
 // MARK: Constants
 //--------------------------------------------------------
 let kProduction: Bool = false
-private let kAPIURL = kProduction ? "https://api.mensamatic.com/" : "https://api.develapps.es/"
+private let kAPIURL = kProduction ? "https://api.mensamatic.com/" : "http://api.develapps.es/"
 private let kAPIVersion = "v1/"
 
 //--------------------------------------------------------
