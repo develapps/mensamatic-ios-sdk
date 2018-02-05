@@ -25,6 +25,25 @@ class LoginViewController: UIViewController {
     @IBAction func doSignIn(_ sender: UIButton) {
         guard let userName = self.userTextField.text, let pass = self.passwordTextField.text else { return }
         
+        self.doLoginBackend(userName: userName, pass: pass)
+    }
+    @IBAction func doMyLogin(_ sender: UIButton) {
+        self.doLoginBackend(userName: "apiTesting", pass: "Develapps18")
+    }
+    
+    //--------------------------------------------------------
+    // MARK: Prepare For Segue
+    //--------------------------------------------------------
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let _ = segue.destination as? MainViewController {
+            
+        }
+    }
+    
+    //--------------------------------------------------------
+    // MARK: Backend
+    //--------------------------------------------------------
+    func doLoginBackend(userName: String, pass: String) {
         sms_authentication(user: userName, password: pass) { (result) in
             switch result {
             case .successWithData( _):
@@ -34,15 +53,6 @@ class LoginViewController: UIViewController {
                 self.present(Common().showAlert(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
                 
             }
-        }
-    }
-    
-    //--------------------------------------------------------
-    // MARK: Prepare For Segue
-    //--------------------------------------------------------
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let _ = segue.destination as? MainViewController {
-            
         }
     }
     

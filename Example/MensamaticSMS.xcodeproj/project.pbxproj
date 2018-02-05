@@ -14,6 +14,12 @@
 		1C76797720249F28005C48BB /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C76797620249F28005C48BB /* SendViewController.swift */; };
 		1C76797920249F32005C48BB /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C76797820249F32005C48BB /* Send.storyboard */; };
 		1C76797B2024A216005C48BB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C76797A2024A216005C48BB /* Common.swift */; };
+		1C9C3722202846E100410AAC /* ListSMS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C3721202846E100410AAC /* ListSMS.storyboard */; };
+		1C9C3724202846F000410AAC /* ListSMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C3723202846F000410AAC /* ListSMSViewController.swift */; };
+		1C9C37272028488100410AAC /* ListSMSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C37262028488100410AAC /* ListSMSCell.swift */; };
+		1C9C372920286A2D00410AAC /* ListIncomingSMSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C372820286A2D00410AAC /* ListIncomingSMSCell.swift */; };
+		1C9C372C2028B1A300410AAC /* FilterList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C372B2028B1A300410AAC /* FilterList.storyboard */; };
+		1C9C372E2028B25F00410AAC /* FilterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C372D2028B25F00410AAC /* FilterListViewController.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -40,6 +46,12 @@
 		1C76797620249F28005C48BB /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SendViewController.swift; path = Send/SendViewController.swift; sourceTree = "<group>"; };
 		1C76797820249F32005C48BB /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Send.storyboard; path = Send/Send.storyboard; sourceTree = "<group>"; };
 		1C76797A2024A216005C48BB /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		1C9C3721202846E100410AAC /* ListSMS.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ListSMS.storyboard; path = List/ListSMS.storyboard; sourceTree = "<group>"; };
+		1C9C3723202846F000410AAC /* ListSMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSMSViewController.swift; path = List/ListSMSViewController.swift; sourceTree = "<group>"; };
+		1C9C37262028488100410AAC /* ListSMSCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSMSCell.swift; path = List/Cells/ListSMSCell.swift; sourceTree = "<group>"; };
+		1C9C372820286A2D00410AAC /* ListIncomingSMSCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListIncomingSMSCell.swift; path = List/Cells/ListIncomingSMSCell.swift; sourceTree = "<group>"; };
+		1C9C372B2028B1A300410AAC /* FilterList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = FilterList.storyboard; path = List/Filter/FilterList.storyboard; sourceTree = "<group>"; };
+		1C9C372D2028B25F00410AAC /* FilterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterListViewController.swift; path = List/Filter/FilterListViewController.swift; sourceTree = "<group>"; };
 		490EA876E793FB13D7E6C072 /* Pods_MensamaticSMS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MensamaticSMS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC076FF7A63F58FF181B721 /* Pods-MensamaticSMS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensamaticSMS_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MensamaticSMS_Tests/Pods-MensamaticSMS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		55EF12DFE2BCF79F068BCE52 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -106,6 +118,35 @@
 			name = Send;
 			sourceTree = "<group>";
 		};
+		1C9C37202028445900410AAC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				1C9C372A2028B0A000410AAC /* Filter */,
+				1C9C37252028486600410AAC /* Cells */,
+				1C9C3721202846E100410AAC /* ListSMS.storyboard */,
+				1C9C3723202846F000410AAC /* ListSMSViewController.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		1C9C37252028486600410AAC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1C9C37262028488100410AAC /* ListSMSCell.swift */,
+				1C9C372820286A2D00410AAC /* ListIncomingSMSCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		1C9C372A2028B0A000410AAC /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				1C9C372B2028B1A300410AAC /* FilterList.storyboard */,
+				1C9C372D2028B25F00410AAC /* FilterListViewController.swift */,
+			);
+			name = Filter;
+			sourceTree = "<group>";
+		};
 		4CBD909CD52A51A43A02076B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +186,7 @@
 				1C76796B20249A6B005C48BB /* Login */,
 				1C76796C20249A78005C48BB /* Main */,
 				1C76797520249F04005C48BB /* Send */,
+				1C9C37202028445900410AAC /* List */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -289,8 +331,10 @@
 			files = (
 				1C76796E20249A9F005C48BB /* Login.storyboard in Resources */,
 				1C76797220249B02005C48BB /* Main.storyboard in Resources */,
+				1C9C372C2028B1A300410AAC /* FilterList.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				1C9C3722202846E100410AAC /* ListSMS.storyboard in Resources */,
 				1C76797920249F32005C48BB /* Send.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,9 +457,13 @@
 			files = (
 				1C76797720249F28005C48BB /* SendViewController.swift in Sources */,
 				1C76797020249AC1005C48BB /* LoginViewController.swift in Sources */,
+				1C9C3724202846F000410AAC /* ListSMSViewController.swift in Sources */,
+				1C9C372E2028B25F00410AAC /* FilterListViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				1C76797B2024A216005C48BB /* Common.swift in Sources */,
 				1C76797420249B0D005C48BB /* MainViewController.swift in Sources */,
+				1C9C37272028488100410AAC /* ListSMSCell.swift in Sources */,
+				1C9C372920286A2D00410AAC /* ListIncomingSMSCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

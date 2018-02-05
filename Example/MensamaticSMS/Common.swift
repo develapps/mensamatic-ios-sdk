@@ -21,3 +21,29 @@ class Common {
     }
     
 }
+
+extension String {
+    
+    func dateStringToDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        if let date = dateFormatter.date(from: self) {
+            return date
+        }
+        return Date()
+    }
+    
+}
+
+extension Date {
+    
+    func dateFormat() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+        let dateString = dateFormatter.string(from: self)
+        
+        return dateString
+    }
+    
+}

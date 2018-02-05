@@ -128,7 +128,7 @@ private func SMS_headers2() -> Dictionary<String,String> {
 /// - Parameters:
 ///   - user: user name
 ///   - password: user password
-///   - completion: method returns success or error with the error information
+///   - completion: method returns success with data or error with the error information
 public func sms_authentication(user: String, password: String, completion: @escaping(SMSNetworkProviderResult)->()) {
 
     guard let url : URL = URL(string: APIEndpointUrl.signIn.SMS_endpointUrl() ) else { return }
@@ -203,6 +203,15 @@ public func sms_authentication(user: String, password: String, completion: @esca
 //--------------------------------------------------------
 // MARK: API SMS
 //--------------------------------------------------------
+
+/// Send a sms to destination.
+///
+/// - Parameters:
+///   - destination: user destination
+///   - body: sms message
+///   - source: sms sender
+///   - date: schedule when the user wants the sms be sent, format: “dd/mm/yyyy hh:mm” in UTC time standard.
+///   - completion: method returns success with a JSON or error with the error information
 public func sms_sendSMS(destination: String, body: String, source: String, date: Date?, completion: @escaping(SMSNetworkProviderResult)->()) {
     
     guard let url = URL(string: APIEndpointUrl.sendSMS.SMS_endpointUrl() ) else { return }
@@ -234,6 +243,14 @@ public func sms_sendSMS(destination: String, body: String, source: String, date:
     
 }
 
+/// Send a unicode sms to destination.
+///
+/// - Parameters:
+///   - destination: user destination
+///   - body: sms message
+///   - source: sms sender
+///   - date: schedule when the user wants the sms be sent, format: “dd/mm/yyyy hh:mm” in UTC time standard.
+///   - completion: method returns success with a JSON or error with the error information
 public func sms_sendUnicodeSMS(destination: String, body: String, source: String, date: Date?, completion: @escaping(SMSNetworkProviderResult)->()) {
     
     guard let url = URL(string: APIEndpointUrl.sendUnicodeSMS.SMS_endpointUrl() ) else { return }
@@ -265,7 +282,17 @@ public func sms_sendUnicodeSMS(destination: String, body: String, source: String
     
 }
 
-public func sms_sendCertificatedSMS(destination: String, body: String, source: String, typeSMS: Int?, receipt: String?, date: Date?, completion: @escaping(SMSNetworkProviderResult)->()) {
+/// Send a certificated sms to destination.
+///
+/// - Parameters:
+///   - destination: user destination
+///   - body: sms message
+///   - source: sms sender
+///   - typeSMS: sent status: constant SentStatus
+///   - receipt: email to receive the shipping report
+///   - date: schedule when the user wants the sms be sent, format: “dd/mm/yyyy hh:mm” in UTC time standard.
+///   - completion: method returns success with a JSON or error with the error information
+public func sms_sendCertificatedSMS(destination: String, body: String, source: String, receipt: String?, date: Date?, completion: @escaping(SMSNetworkProviderResult)->()) {
     
     guard let url = URL(string: APIEndpointUrl.sendCertificatedSMS.SMS_endpointUrl() ) else { return }
     
@@ -273,13 +300,7 @@ public func sms_sendCertificatedSMS(destination: String, body: String, source: S
     request.httpMethod = "POST"
     request.allHTTPHeaderFields = SMS_headers()
     
-    var dic: [String:Any] = ["destination" : destination, "body" : body, "source" : source]
-    
-    if let typeSMS = typeSMS {
-        dic["type_sms"] = "\(typeSMS)"
-    } else {
-        dic["type_sms"] = 0
-    }
+    var dic: [String:Any] = ["destination" : destination, "body" : body, "source" : source, "type_sms": sms_kType.cetificate.rawValue]
     
     if let receipt = receipt {
         dic["receipt"] = receipt
@@ -306,7 +327,18 @@ public func sms_sendCertificatedSMS(destination: String, body: String, source: S
     
 }
 
-public func sms_listSentSMS(id: String?, destination: String?, source: String?, from_date: String?, to_date: String?, date: Date?, sent: Bool?, sent_status: String?, completion: @escaping(SMSNetworkProviderResult)->()) {
+/// List sms sent by user with current status.
+///
+/// - Parameters:
+///   - id: sms id
+///   - destination: sms destination
+///   - source: sms sender
+///   - from_date: from date, format: dd/mm/yyyy hh:mm
+///   - to_date: to date, format: dd/mm/yyyy hh:mm
+///   - sent: bool that indicates if the sms was sent or not
+///   - sent_status: sent status: constant SentStatus
+///   - completion: method returns success with a JSON or error with the error information
+public func sms_listSentSMS(id: String?, destination: String?, source: String?, from_date: String?, to_date: String?, sent: Bool?, sent_status: String?, completion: @escaping(SMSNetworkProviderResult)->()) {
     
     guard let url = URL(string: APIEndpointUrl.listSentSMS.SMS_endpointUrl() ) else { return }
     
@@ -336,6 +368,9 @@ public func sms_listSentSMS(id: String?, destination: String?, source: String?, 
     
 }
 
+/// List incoming sms messages sent to the phones assigned to the user.
+///
+/// - Parameter completion: method returns success with a JSON or error with the error information
 public func sms_listIncomingSMS(completion: @escaping(SMSNetworkProviderResult)->()) {
     
     guard let url = URL(string: APIEndpointUrl.listIncomingSMS.SMS_endpointUrl() ) else { return }
@@ -352,6 +387,15 @@ public func sms_listIncomingSMS(completion: @escaping(SMSNetworkProviderResult)-
     
 }
 
+/// Send a SMS message that may be replied.
+///
+/// - Parameters:
+///   - destination: user destination
+///   - body: sms message
+///   - source: sms sender
+///   - unicode: if SMS is unicode or not, default: false
+///   - date: schedule when the user wants the sms be sent, format: “dd/mm/yyyy hh:mm” in UTC time standard.
+///   - completion: method returns success with a JSON or error with the error information
 public func sms_send2WaySMS(destination: String, body: String, source: String, unicode: Bool?, date: Date?, completion: @escaping(SMSNetworkProviderResult)->()) {
     
     guard let url = URL(string: APIEndpointUrl.send2waySMS.SMS_endpointUrl() ) else { return }
@@ -387,6 +431,13 @@ public func sms_send2WaySMS(destination: String, body: String, source: String, u
     
 }
 
+/// Calculates cost per SMS message.
+///
+/// - Parameters:
+///   - body: sms message
+///   - unicode: if SMS is unicode or not, default: false
+///   - type: type of sms: constant SMSType
+///   - completion: method returns success with a JSON or error with the error information
 public func sms_calculateCostPerSMS(body: String, unicode: Bool?, type: Int?, completion: @escaping(SMSNetworkProviderResult)->()) {
     
     guard let url = URL(string: APIEndpointUrl.calculateCostPerSMS.SMS_endpointUrl() ) else { return }
@@ -422,6 +473,11 @@ public func sms_calculateCostPerSMS(body: String, unicode: Bool?, type: Int?, co
     
 }
 
+/// Cancels a scheduled SMS.
+///
+/// - Parameters:
+///   - id: sms id
+///   - completion: method returns success or error with the error information
 public func sms_cancelScheduledSMS(id: String, completion: @escaping(SMSNetworkProviderResult)->()) {
     
     guard let url = URL(string: APIEndpointUrl.cancelScheduleSMS.SMS_endpointUrl() ) else { return }
@@ -443,12 +499,28 @@ public func sms_cancelScheduledSMS(id: String, completion: @escaping(SMSNetworkP
     
     URLSession.shared.dataTask(with: request) { (data, response, error) in
         DispatchQueue.main.async {
-            completion(SMSResponseTreatment(data: data, response: response, error: error))
+            
+            if error != nil {
+                completion(.error(SMSNetworkError.generic))
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                if 200 ... 299 ~= response.statusCode {
+                    completion(.successWithData( "" ))
+                    return
+                }
+            }
+            
+            completion(.error(SMSNetworkError.generic))
+            
         }
         }.resume()
     
 }
 
+/// Gets the current user applications.
+///
+/// - Parameter completion: method returns success with a JSON or error with the error information
 public func sms_currentUserCredits(completion: @escaping(SMSNetworkProviderResult)->()) {
     
     guard let url = URL(string: APIEndpointUrl.currentUserCredits.SMS_endpointUrl() ) else { return }

@@ -70,13 +70,13 @@ public enum APIEndpointUrl {
 //--------------------------------------------------------
 // MARK: Constants
 //--------------------------------------------------------
-public enum SMSType: Int {
+public enum sms_kType: Int {
     case simple = 0
     case cetificate = 1
     case contract = 2
 }
 
-public enum SentStatus: Int {
+public enum sms_kSentStatus: Int {
     case unknown = 0
     case received = 1
     case failed = 2

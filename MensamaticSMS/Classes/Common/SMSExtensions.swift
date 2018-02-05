@@ -11,7 +11,8 @@ extension Date {
     
     func sms_dateToBackendFormat() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/mm/yyyy hh:mm"
+        dateFormatter.dateFormat = "dd/MM/YYYY HH:mm"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         let dateString = dateFormatter.string(from: self)
         
         return dateString
