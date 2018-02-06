@@ -10,6 +10,7 @@ import UIKit
 import MensamaticSMS
 
 struct Filter {
+    var userFilter: Bool = false
     var destination: String?
     var sender: String?
     var fromDate: Date?
@@ -31,6 +32,7 @@ class FilterListViewController: UIViewController {
     @IBOutlet weak var toDateTextField: UITextField!
     @IBOutlet weak var toDateLabel: UILabel!
     @IBOutlet weak var sentSwitch: UISwitch!
+    @IBOutlet weak var notSentSwitch: UISwitch!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     let fromDatePicker = UIDatePicker()
@@ -56,27 +58,26 @@ class FilterListViewController: UIViewController {
         self.destinationTextField.inputAccessoryView = toolbar
         self.senderTextField.inputAccessoryView = toolbar
         
-        self.fromDateLabel.text = ""
-        self.toDateLabel.text = ""
+        self.fromDateLabel.text = "select date"
+        self.toDateLabel.text = "select date"
         
         self.fromDatePicker.datePickerMode = .dateAndTime
-        self.fromDatePicker.maximumDate = Date()
         self.toDatePicker.datePickerMode = .dateAndTime
-        self.toDatePicker.minimumDate = Date()
+        
+        self.filter = Filter()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         
         if !self.dontSaveFilter {
-            self.filter = Filter()
+            self.filter?.userFilter = true
             self.filter?.destination = self.destinationTextField.text
             self.filter?.sender = self.senderTextField.text
             self.filter?.fromDate = self.fromDateSelected
             self.filter?.toDate = self.toDateSelected
-            self.filter?.sent = self.sentSwitch.isOn
-            self.filter?.sentStatus = self.segmentedControl.selectedSegmentIndex
-            self.delegate?.filterListDataWith(self.filter!)
         }
+        
+        self.delegate?.filterListDataWith(self.filter!)
         
         super.viewWillDisappear(animated)
     }
@@ -108,7 +109,7 @@ class FilterListViewController: UIViewController {
     }
     
     @objc func cancelFromDatePicker(){
-        self.fromDateLabel.text = ""
+        self.fromDateLabel.text = "select date"
         self.fromDateSelected = nil
         self.fromDateTextField.resignFirstResponder()
     }
@@ -137,7 +138,7 @@ class FilterListViewController: UIViewController {
     }
     
     @objc func cancelToDatePicker(){
-        self.toDateLabel.text = ""
+        self.toDateLabel.text = "select date"
         self.toDateSelected = nil
         self.toDateTextField.resignFirstResponder()
     }
@@ -149,12 +150,31 @@ class FilterListViewController: UIViewController {
         self.toDateTextField.resignFirstResponder()
     }
     
-    @IBAction func changedSwitch(_ sender: UISwitch) {
-        
+    @IBAction func sent(_ sender: UISwitch) {
+        if sender.isOn {
+            self.notSentSwitch.isOn = false
+            self.filter?.sent = true
+        } else {
+            self.filter?.sent = nil
+        }
+    }
+    
+    @IBAction func notSent(_ sender: UISwitch) {
+        if !sender.isOn {
+            self.filter?.sent = nil
+        } else {
+            self.sentSwitch.isOn = false
+            self.filter?.sent = false
+        }
     }
     
     @IBAction func sentStatusSegmentedChanged(_ sender: UISegmentedControl) {
-        
+        self.filter?.sentStatus = sender.selectedSegmentIndex
+    }
+    
+    @IBAction func resetStatus(_ sender: UIButton) {
+        self.filter?.sentStatus = nil
+        self.segmentedControl.selectedSegmentIndex = -1
     }
     
     @IBAction func restartListWithoutFilters(_ sender: UIBarButtonItem) {

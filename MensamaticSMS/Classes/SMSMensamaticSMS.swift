@@ -100,6 +100,8 @@ private var userToken: String?
 
 private func SMS_headers() -> Dictionary<String,String> {
     var headers = ["Content-Type":"application/json"]
+//    headers["Content-Language"] = "es"
+    headers["Accept-Language"] = "es-es" //If you change that, you have to change on sms_dateToBackendFormat() because the format of the date is dd/mm
     
     if let token = userToken {
         headers["Authorization"] = "Token \(token)"
@@ -338,27 +340,46 @@ public func sms_sendCertificatedSMS(destination: String, body: String, source: S
 ///   - sent: bool that indicates if the sms was sent or not
 ///   - sent_status: sent status: constant SentStatus
 ///   - completion: method returns success with a JSON or error with the error information
-public func sms_listSentSMS(id: String?, destination: String?, source: String?, from_date: String?, to_date: String?, sent: Bool?, sent_status: String?, completion: @escaping(SMSNetworkProviderResult)->()) {
+public func sms_listSentSMS(id: String?, destination: String?, source: String?, from_date: Date?, to_date: Date?, sent: Bool?, sent_status: Int?, completion: @escaping(SMSNetworkProviderResult)->()) {
     
-    guard let url = URL(string: APIEndpointUrl.listSentSMS.SMS_endpointUrl() ) else { return }
+    guard var components = URLComponents(string: APIEndpointUrl.listSentSMS.SMS_endpointUrl()) else { return }
+    components.queryItems = []
+    
+    if let destination = destination {
+        let destinationItem = URLQueryItem(name: "destination", value: destination)
+        components.queryItems?.append(destinationItem)
+    }
+    
+    if let source = source {
+        let destinationItem = URLQueryItem(name: "source", value: source)
+        components.queryItems?.append(destinationItem)
+    }
+    
+    if let from_date = from_date {
+        let destinationItem = URLQueryItem(name: "from_date", value: from_date.sms_dateToBackendFormat())
+        components.queryItems?.append(destinationItem)
+    }
+    
+    if let to_date = to_date {
+        let destinationItem = URLQueryItem(name: "to_date", value: to_date.sms_dateToBackendFormat())
+        components.queryItems?.append(destinationItem)
+    }
+    
+    if let sent = sent {
+        let destinationItem = URLQueryItem(name: "sent", value: sent ? "True" : "False")
+        components.queryItems?.append(destinationItem)
+    }
+    
+    if let sent_status = sent_status, sent_status != -1 {
+        let destinationItem = URLQueryItem(name: "sent_status", value: "\(sent_status)")
+        components.queryItems?.append(destinationItem)
+    }
+    
+    guard let url = components.url else { return }
     
     var request : URLRequest = URLRequest(url: url)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = SMS_headers()
-    
-//    var dic = ["destination" : destination, "body" : body, "source" : source]
-//
-//    if let typeSMS = typeSMS {
-//        dic["type_sms"] = "\(typeSMS)"
-//    }
-//
-//    if let receipt = receipt {
-//        dic["receipt"] = receipt
-//    }
-//
-//    if let date = date {
-//        dic["scheduled_datetime"] = date.sms_dateToBackendFormat()
-//    }
     
     URLSession.shared.dataTask(with: request) { (data, response, error) in
         DispatchQueue.main.async {

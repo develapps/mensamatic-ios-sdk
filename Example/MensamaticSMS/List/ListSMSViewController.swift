@@ -57,8 +57,8 @@ class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, Filte
     //-------------------------------------
     // MARK: - Backend
     //-------------------------------------
-    private func loadSentSMS() {
-        sms_listSentSMS(id: nil, destination: nil, source: nil, from_date: nil, to_date: nil, sent: nil, sent_status: nil) { (result) in
+    private func loadSentSMS(filter: Filter? = nil) {
+        sms_listSentSMS(id: nil, destination: filter?.destination, source: filter?.sender, from_date: filter?.fromDate, to_date: filter?.toDate, sent: filter?.sent, sent_status: filter?.sentStatus) { (result) in
             switch result {
             case .successWithData(let data):
                 if let json = data as? [String:Any], let results = json["results"] as? [[String:Any]] {
@@ -109,6 +109,11 @@ class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, Filte
     }
     
     func filterListDataWith(_ filter: Filter) {
+        if filter.userFilter {
+            self.loadSentSMS(filter: filter)
+        } else {
+            self.loadSentSMS()
+        }
         print(filter)
     }
     
