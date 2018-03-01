@@ -98,9 +98,11 @@ private func sms_encodeParameters(dict:[String:Any]) -> String? {
 
 private var userToken: String?
 
+/// Request headers
+///
+/// - Returns: headers for the request with token when necessary
 private func SMS_headers() -> Dictionary<String,String> {
     var headers = ["Content-Type":"application/json"]
-//    headers["Content-Language"] = "es"
     headers["Accept-Language"] = "es-es" //If you change that, you have to change on sms_dateToBackendFormat() because the format of the date is dd/mm
     
     if let token = userToken {
@@ -109,17 +111,6 @@ private func SMS_headers() -> Dictionary<String,String> {
     }
     return headers
 }
-
-private func SMS_headers2() -> Dictionary<String,String> {
-    var headers = ["Content-Type":"application/json"]
-    
-    if let token = userToken {
-        headers["Authorization"] = token
-        return headers
-    }
-    return headers
-}
-
 
 //--------------------------------------------------------
 // MARK: Authentication
@@ -539,7 +530,7 @@ public func sms_cancelScheduledSMS(id: String, completion: @escaping(SMSNetworkP
     
 }
 
-/// Gets the current user applications.
+/// Gets the current user credits.
 ///
 /// - Parameter completion: method returns success with a JSON or error with the error information
 public func sms_currentUserCredits(completion: @escaping(SMSNetworkProviderResult)->()) {

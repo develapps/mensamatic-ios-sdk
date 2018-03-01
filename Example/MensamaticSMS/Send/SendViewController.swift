@@ -14,11 +14,12 @@ class SendViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var dateTextField: UITextField!
-    @IBOutlet weak var dateSelectedLabel: UILabel!
     @IBOutlet weak var sourceTextField: UITextField!
+    @IBOutlet weak var selectDateButton: UIButton!
     
     let datePicker = UIDatePicker()
     var dateSelected: Date?
+    let kOFFSET_FOR_KEYBOARD: CGFloat = 100.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,17 +41,49 @@ class SendViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
         self.bodyTextView.inputAccessoryView = toolbar
         self.sourceTextField.inputAccessoryView = toolbar
         self.sourceTextField.delegate = self
-        
-        self.dateSelectedLabel.text = ""
 
         //Formate Date
         self.datePicker.datePickerMode = .dateAndTime
         self.datePicker.minimumDate = Date()
     }
-
+    
+    //-------------------------------------
+    // MARK: - Animate Keyboard
+    //-------------------------------------
+    func setViewMoveUp(movedUp: Bool) {
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.3)
+        
+        var rect = self.view.frame
+        if movedUp {
+            rect.origin.y -= kOFFSET_FOR_KEYBOARD
+            rect.size.height += kOFFSET_FOR_KEYBOARD
+        } else {
+            rect.origin.y += kOFFSET_FOR_KEYBOARD
+            rect.size.height -= kOFFSET_FOR_KEYBOARD
+        }
+        self.view.frame = rect
+        
+        UIView.commitAnimations()
+    }
+    
     //-------------------------------------
     // MARK: - Text view Delegate
     //-------------------------------------
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.sourceTextField {
+            if self.view.frame.origin.y >= 0 {
+                self.setViewMoveUp(movedUp: true)
+            }
+        }
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == self.sourceTextField {
+            if self.view.frame.origin.y < 0 {
+                self.setViewMoveUp(movedUp: false)
+            }
+        }
+    }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         guard let textOfTextView = textView.text else { return true }
         let newLength = textOfTextView.count + text.count - range.length
@@ -96,13 +129,13 @@ class SendViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
     @objc func donedatePicker(){
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy HH:mm"
-        self.dateSelectedLabel.text = formatter.string(from: self.datePicker.date)
+        self.selectDateButton.setTitle(formatter.string(from: self.datePicker.date), for: .normal)
         self.dateSelected = self.datePicker.date
         self.dateTextField.resignFirstResponder()
     }
     
     @objc func cancelDatePicker(){
-        self.dateSelectedLabel.text = ""
+        self.selectDateButton.setTitle("Select date", for: .normal)
         self.dateSelected = nil
         self.dateTextField.resignFirstResponder()
     }
@@ -240,7 +273,7 @@ class SendViewController: UIViewController, UITextViewDelegate, UITextFieldDeleg
         self.phoneTextField.text = ""
         self.bodyTextView.text = ""
         self.dateSelected = nil
-        self.dateSelectedLabel.text = ""
+        self.selectDateButton.setTitle("Select date", for: .normal)
     }
     
 }

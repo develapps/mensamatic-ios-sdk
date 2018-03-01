@@ -23,21 +23,13 @@ protocol FilterListDataProtocol {
     func filterListDataWith( _ filter: Filter)
 }
 
-class FilterListViewController: UIViewController {
+class FilterListViewController: UIViewController, FilterTextFieldCellProtocol, FilterSentCellProtocol, FilterStatusCellProtocol {
 
-    @IBOutlet weak var destinationTextField: UITextField!
-    @IBOutlet weak var senderTextField: UITextField!
-    @IBOutlet weak var fromDateTextField: UITextField!
-    @IBOutlet weak var fromDateLabel: UILabel!
-    @IBOutlet weak var toDateTextField: UITextField!
-    @IBOutlet weak var toDateLabel: UILabel!
-    @IBOutlet weak var sentSwitch: UISwitch!
-    @IBOutlet weak var notSentSwitch: UISwitch!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
     
-    let fromDatePicker = UIDatePicker()
+    var destination: String?
+    var sender: String?
     var fromDateSelected: Date?
-    let toDatePicker = UIDatePicker()
     var toDateSelected: Date?
     
     var delegate: FilterListDataProtocol?
@@ -50,29 +42,20 @@ class FilterListViewController: UIViewController {
 
         self.title = "Filter"
         
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneText))
-        toolbar.setItems([doneButton], animated: false)
-        
-        self.destinationTextField.inputAccessoryView = toolbar
-        self.senderTextField.inputAccessoryView = toolbar
-        
-        self.fromDateLabel.text = "select date"
-        self.toDateLabel.text = "select date"
-        
-        self.fromDatePicker.datePickerMode = .dateAndTime
-        self.toDatePicker.datePickerMode = .dateAndTime
-        
         self.filter = Filter()
+        
+        self.tableView.dataSource = self
+        self.tableView.estimatedRowHeight = 200
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.reloadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         
         if !self.dontSaveFilter {
             self.filter?.userFilter = true
-            self.filter?.destination = self.destinationTextField.text
-            self.filter?.sender = self.senderTextField.text
+            self.filter?.destination = self.destination
+            self.filter?.sender = self.sender
             self.filter?.fromDate = self.fromDateSelected
             self.filter?.toDate = self.toDateSelected
         }
@@ -85,101 +68,109 @@ class FilterListViewController: UIViewController {
     //-------------------------------------
     // MARK: - Actions
     //-------------------------------------
-    @IBAction func openFromDatePicker(_ sender: UIButton) {
-        //ToolBar
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneFromDatePicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Remove", style: .plain, target: self, action: #selector(cancelFromDatePicker))
-        
-        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
-        
-        self.fromDateTextField.inputAccessoryView = toolbar
-        self.fromDateTextField.inputView = self.fromDatePicker
-        self.fromDateTextField.becomeFirstResponder()
-    }
-    
-    @objc func doneFromDatePicker(){
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy HH:mm"
-        self.fromDateLabel.text = formatter.string(from: self.fromDatePicker.date)
-        self.fromDateSelected = self.fromDatePicker.date
-        self.fromDateTextField.resignFirstResponder()
-    }
-    
-    @objc func cancelFromDatePicker(){
-        self.fromDateLabel.text = "select date"
-        self.fromDateSelected = nil
-        self.fromDateTextField.resignFirstResponder()
-    }
-    
-    @IBAction func openToDatePicker(_ sender: UIButton) {
-        //ToolBar
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneToDatePicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Remove", style: .plain, target: self, action: #selector(cancelToDatePicker))
-        
-        toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
-        
-        self.toDateTextField.inputAccessoryView = toolbar
-        self.toDateTextField.inputView = self.toDatePicker
-        self.toDateTextField.becomeFirstResponder()
-    }
-    
-    @objc func doneToDatePicker(){
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy HH:mm"
-        self.toDateLabel.text = formatter.string(from: self.toDatePicker.date)
-        self.toDateSelected = self.toDatePicker.date
-        self.toDateTextField.resignFirstResponder()
-    }
-    
-    @objc func cancelToDatePicker(){
-        self.toDateLabel.text = "select date"
-        self.toDateSelected = nil
-        self.toDateTextField.resignFirstResponder()
-    }
-    
-    @objc func doneText(){
-        self.destinationTextField.resignFirstResponder()
-        self.senderTextField.resignFirstResponder()
-        self.fromDateTextField.resignFirstResponder()
-        self.toDateTextField.resignFirstResponder()
-    }
-    
-    @IBAction func sent(_ sender: UISwitch) {
-        if sender.isOn {
-            self.notSentSwitch.isOn = false
-            self.filter?.sent = true
-        } else {
-            self.filter?.sent = nil
-        }
-    }
-    
-    @IBAction func notSent(_ sender: UISwitch) {
-        if !sender.isOn {
-            self.filter?.sent = nil
-        } else {
-            self.sentSwitch.isOn = false
-            self.filter?.sent = false
-        }
-    }
-    
-    @IBAction func sentStatusSegmentedChanged(_ sender: UISegmentedControl) {
-        self.filter?.sentStatus = sender.selectedSegmentIndex
-    }
-    
-    @IBAction func resetStatus(_ sender: UIButton) {
-        self.filter?.sentStatus = nil
-        self.segmentedControl.selectedSegmentIndex = -1
-    }
-    
     @IBAction func restartListWithoutFilters(_ sender: UIBarButtonItem) {
         self.dontSaveFilter = true
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    //-------------------------------------
+    // MARK: - TextFieldCell Protocol
+    //-------------------------------------
+    func textChanged(typeOfCell: FilterTextFieldCellType, text: String?, field: Int, date: Date?) {
+        if typeOfCell == .text, let text = text {
+            if field == 0 {
+                self.destination = text
+            } else {
+                self.sender = text
+            }
+        } else if let date = date {
+            if field == 0 {
+                self.fromDateSelected = date
+            } else {
+                self.toDateSelected = date
+            }
+        }
+    }
+    
+    //-------------------------------------
+    // MARK: - SentCell Protocol
+    //-------------------------------------
+    func switchChanged(sent: Bool, sentSwitch: Int) {
+        if !sent {
+            self.filter?.sent = nil
+        } else {
+            if sentSwitch == 0 {
+                self.filter?.sent = true
+            } else {
+                self.filter?.sent = false
+            }
+        }
+    }
+    
+    //-------------------------------------
+    // MARK: - StatusCell Protocol
+    //-------------------------------------
+    func switchChanged(isActive: Bool, sentStatus: Int) {
+        if isActive {
+            self.filter?.sentStatus = nil
+        } else {
+            self.filter?.sentStatus = sentStatus
+        }
+    }
+    
+}
+
+extension FilterListViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FilterTextFieldCell", for: indexPath) as! FilterTextFieldCell
+            cell.setupCell(type: .text)
+            cell.delegate = self
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FilterTextFieldCell", for: indexPath) as! FilterTextFieldCell
+            cell.setupCell(type: .date)
+            cell.delegate = self
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FilterSentCell", for: indexPath) as! FilterSentCell
+            cell.delegate = self
+            return cell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FilterStatusCell", for: indexPath) as! FilterStatusCell
+            cell.delegate = self
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FilterTextFieldCell", for: indexPath) as! FilterTextFieldCell
+            cell.setupCell(type: .text)
+            cell.delegate = self
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Destinatario"
+        case 1:
+            return "Date"
+        case 2:
+            return "Sent"
+        case 3:
+            return "Status"
+        default:
+            return ""
+        }
     }
     
 }

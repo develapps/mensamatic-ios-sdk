@@ -15,6 +15,7 @@ protocol CancelScheduledSMSProtocol {
 
 class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, FilterListDataProtocol {
 
+    @IBOutlet weak var noResultsLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,12 +31,22 @@ class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, Filte
         self.tableView.tableFooterView = UIView()
         self.tableView.reloadData()
         
+        let buttonRight = UIButton(frame: CGRect(x: UIScreen.main.bounds.width-50, y: 0, width: 44, height: 44))
+        buttonRight.setTitle("Filter", for: .normal)
+        buttonRight.addTarget(self, action: #selector(self.openFilters), for: .touchUpInside)
+        buttonRight.setTitleColor(UIColor(red: 19.0/255.0, green: 118.0/255.0, blue: 251.0/255.0, alpha: 1.0), for: .normal)
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: buttonRight)]
+        
         self.loadSentSMS()
     }
 
     //-------------------------------------
     // MARK: - Actions
     //-------------------------------------
+    @objc private func openFilters() {
+        self.performSegue(withIdentifier: "FilterSegue", sender: nil)
+    }
+    
     @IBAction func changeData(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             self.loadSentSMS()
@@ -63,13 +74,13 @@ class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, Filte
             case .successWithData(let data):
                 if let json = data as? [String:Any], let results = json["results"] as? [[String:Any]] {
                     self.cells = results
-                    self.tableView.reloadData()
                 }
                 
             case .error(let error):
                 self.present(Common().showAlert(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
                 
             }
+            self.updateTableView()
             self.segmentedControl.isUserInteractionEnabled = true
         }
     }
@@ -80,13 +91,13 @@ class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, Filte
             case .successWithData(let data):
                 if let json = data as? [String:Any], let results = json["results"] as? [[String:Any]] {
                     self.cells = results
-                    self.tableView.reloadData()
                 }
                 
             case .error(let error):
                 self.present(Common().showAlert(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
                 
             }
+            self.updateTableView()
             self.segmentedControl.isUserInteractionEnabled = true
         }
     }
@@ -120,6 +131,15 @@ class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, Filte
     //-------------------------------------
     // MARK: - Helpers
     //-------------------------------------
+    private func updateTableView() {
+        self.tableView.reloadData()
+        if self.cells.count == 0 {
+            self.noResultsLabel.text = "There is no results"
+        } else {
+            self.noResultsLabel.text = ""
+        }
+    }
+    
     private func changeCell(smsID: String) {
         if let index = self.cells.index(where: { (JSON) -> Bool in
             if let id = JSON["id"] as? String, id == smsID {

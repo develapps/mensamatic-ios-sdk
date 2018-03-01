@@ -14,6 +14,9 @@
 		1C76797720249F28005C48BB /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C76797620249F28005C48BB /* SendViewController.swift */; };
 		1C76797920249F32005C48BB /* Send.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C76797820249F32005C48BB /* Send.storyboard */; };
 		1C76797B2024A216005C48BB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C76797A2024A216005C48BB /* Common.swift */; };
+		1C76BB53204813780083D329 /* FilterTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C76BB52204813780083D329 /* FilterTextFieldCell.swift */; };
+		1C76BB55204813A40083D329 /* FilterSentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C76BB54204813A40083D329 /* FilterSentCell.swift */; };
+		1C76BB572048196D0083D329 /* FilterStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C76BB562048196D0083D329 /* FilterStatusCell.swift */; };
 		1C9C3722202846E100410AAC /* ListSMS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C9C3721202846E100410AAC /* ListSMS.storyboard */; };
 		1C9C3724202846F000410AAC /* ListSMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C3723202846F000410AAC /* ListSMSViewController.swift */; };
 		1C9C37272028488100410AAC /* ListSMSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C37262028488100410AAC /* ListSMSCell.swift */; };
@@ -46,6 +49,9 @@
 		1C76797620249F28005C48BB /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SendViewController.swift; path = Send/SendViewController.swift; sourceTree = "<group>"; };
 		1C76797820249F32005C48BB /* Send.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Send.storyboard; path = Send/Send.storyboard; sourceTree = "<group>"; };
 		1C76797A2024A216005C48BB /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		1C76BB52204813780083D329 /* FilterTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterTextFieldCell.swift; path = List/Filter/Cells/FilterTextFieldCell.swift; sourceTree = "<group>"; };
+		1C76BB54204813A40083D329 /* FilterSentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterSentCell.swift; path = List/Filter/Cells/FilterSentCell.swift; sourceTree = "<group>"; };
+		1C76BB562048196D0083D329 /* FilterStatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FilterStatusCell.swift; path = List/Filter/Cells/FilterStatusCell.swift; sourceTree = "<group>"; };
 		1C9C3721202846E100410AAC /* ListSMS.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ListSMS.storyboard; path = List/ListSMS.storyboard; sourceTree = "<group>"; };
 		1C9C3723202846F000410AAC /* ListSMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSMSViewController.swift; path = List/ListSMSViewController.swift; sourceTree = "<group>"; };
 		1C9C37262028488100410AAC /* ListSMSCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListSMSCell.swift; path = List/Cells/ListSMSCell.swift; sourceTree = "<group>"; };
@@ -118,6 +124,16 @@
 			name = Send;
 			sourceTree = "<group>";
 		};
+		1C76BB51204813470083D329 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1C76BB52204813780083D329 /* FilterTextFieldCell.swift */,
+				1C76BB54204813A40083D329 /* FilterSentCell.swift */,
+				1C76BB562048196D0083D329 /* FilterStatusCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		1C9C37202028445900410AAC /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +157,7 @@
 		1C9C372A2028B0A000410AAC /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				1C76BB51204813470083D329 /* Cells */,
 				1C9C372B2028B1A300410AAC /* FilterList.storyboard */,
 				1C9C372D2028B25F00410AAC /* FilterListViewController.swift */,
 			);
@@ -464,6 +481,9 @@
 				1C76797420249B0D005C48BB /* MainViewController.swift in Sources */,
 				1C9C37272028488100410AAC /* ListSMSCell.swift in Sources */,
 				1C9C372920286A2D00410AAC /* ListIncomingSMSCell.swift in Sources */,
+				1C76BB55204813A40083D329 /* FilterSentCell.swift in Sources */,
+				1C76BB53204813780083D329 /* FilterTextFieldCell.swift in Sources */,
+				1C76BB572048196D0083D329 /* FilterStatusCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,9 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa3-sy-kGn">
+                                <rect key="frame" x="50" y="325" width="275" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O9O-Hq-ErB">
                                 <rect key="frame" x="0.0" y="68" width="375" height="599"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListSMSCell" rowHeight="162" id="PPn-Jk-HHY" customClass="ListSMSCell" customModule="MensamaticSMS_Example" customModuleProvider="target">
@@ -174,25 +180,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5oC-pf-WH2" firstAttribute="trailing" secondItem="xa3-sy-kGn" secondAttribute="trailing" constant="50" id="0BX-DV-oQA"/>
                             <constraint firstItem="O9O-Hq-ErB" firstAttribute="leading" secondItem="5oC-pf-WH2" secondAttribute="leading" id="7fc-5R-suo"/>
                             <constraint firstItem="O9O-Hq-ErB" firstAttribute="top" secondItem="XOY-IQ-ZeH" secondAttribute="bottom" constant="10" id="9rq-fO-Izi"/>
                             <constraint firstItem="XOY-IQ-ZeH" firstAttribute="centerX" secondItem="Gb8-Fv-AaL" secondAttribute="centerX" id="CPY-4o-z10"/>
+                            <constraint firstItem="xa3-sy-kGn" firstAttribute="centerY" secondItem="Gb8-Fv-AaL" secondAttribute="centerY" id="DTp-QZ-o8G"/>
                             <constraint firstItem="XOY-IQ-ZeH" firstAttribute="top" secondItem="5oC-pf-WH2" secondAttribute="top" constant="10" id="Eit-wd-SR8"/>
                             <constraint firstItem="5oC-pf-WH2" firstAttribute="trailing" secondItem="O9O-Hq-ErB" secondAttribute="trailing" id="J9U-eO-lwb"/>
                             <constraint firstItem="5oC-pf-WH2" firstAttribute="bottom" secondItem="O9O-Hq-ErB" secondAttribute="bottom" id="Oqv-6f-ykv"/>
+                            <constraint firstItem="xa3-sy-kGn" firstAttribute="leading" secondItem="5oC-pf-WH2" secondAttribute="leading" constant="50" id="jep-yz-c7o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5oC-pf-WH2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="OC5-90-ZYq">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="3dI-KI-CKE">
-                            <connections>
-                                <segue destination="SZw-AT-PaN" kind="show" identifier="FilterSegue" id="AGj-BI-yg6"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="OC5-90-ZYq"/>
                     <connections>
+                        <outlet property="noResultsLabel" destination="xa3-sy-kGn" id="bY1-M2-Qsj"/>
                         <outlet property="segmentedControl" destination="XOY-IQ-ZeH" id="e8V-FB-nqb"/>
                         <outlet property="tableView" destination="O9O-Hq-ErB" id="9KI-Th-ECV"/>
+                        <segue destination="SZw-AT-PaN" kind="show" identifier="FilterSegue" id="3ox-Iv-KYr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nH5-X8-ZuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

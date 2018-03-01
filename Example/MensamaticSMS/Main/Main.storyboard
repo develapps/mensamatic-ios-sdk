@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yqg-Il-Uyq">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,47 +15,78 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="Dc9-g1-5EC" customClass="MainViewController" customModule="MensamaticSMS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hIV-7c-7yI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnC-gl-C2D">
-                                <rect key="frame" x="50" y="104" width="275" height="30"/>
-                                <state key="normal" title="Send SMS"/>
-                                <connections>
-                                    <action selector="openSendView:" destination="Dc9-g1-5EC" eventType="touchUpInside" id="6pz-eL-srB"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94p-pI-nbV">
-                                <rect key="frame" x="140" y="144" width="96" height="30"/>
+                                <rect key="frame" x="100" y="318" width="120" height="40"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Dl0-08-Fo8"/>
+                                    <constraint firstAttribute="width" constant="120" id="evV-8T-Z6J"/>
+                                </constraints>
                                 <state key="normal" title="List Sent SMS"/>
                                 <connections>
                                     <action selector="openListSMS:" destination="Dc9-g1-5EC" eventType="touchUpInside" id="s76-Pm-CsV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6Y-35-y7K">
-                                <rect key="frame" x="119" y="184" width="137" height="30"/>
-                                <state key="normal" title="Current user credits"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uOm-tK-uLe">
+                                <rect key="frame" x="125.5" y="144" width="69.5" height="89"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9n-NA-DJl">
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dM-As-Yjq">
+                                        <rect key="frame" x="22.5" y="20.5" width="25" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="credits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znR-AF-r2P">
+                                        <rect key="frame" x="8.5" y="68.5" width="52.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnC-gl-C2D">
+                                <rect key="frame" x="110" y="263" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7Ok-Mc-iYn"/>
+                                    <constraint firstAttribute="width" constant="100" id="gB8-2j-eOX"/>
+                                </constraints>
+                                <state key="normal" title="Send SMS"/>
                                 <connections>
-                                    <action selector="getCurrentUserCredits:" destination="Dc9-g1-5EC" eventType="touchUpInside" id="qPl-5B-s2K"/>
+                                    <action selector="openSendView:" destination="Dc9-g1-5EC" eventType="touchUpInside" id="6pz-eL-srB"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="MnC-gl-C2D" firstAttribute="leading" secondItem="OqI-h1-0Nj" secondAttribute="leading" constant="50" id="8bs-ih-1Ad"/>
-                            <constraint firstItem="MnC-gl-C2D" firstAttribute="top" secondItem="OqI-h1-0Nj" secondAttribute="top" constant="40" id="8lY-Ch-yFK"/>
-                            <constraint firstItem="N6Y-35-y7K" firstAttribute="top" secondItem="94p-pI-nbV" secondAttribute="bottom" constant="10" id="Ewv-QB-omw"/>
-                            <constraint firstItem="OqI-h1-0Nj" firstAttribute="trailing" secondItem="MnC-gl-C2D" secondAttribute="trailing" constant="50" id="bbs-Gw-5NB"/>
+                            <constraint firstItem="MnC-gl-C2D" firstAttribute="top" secondItem="uOm-tK-uLe" secondAttribute="bottom" constant="30" id="9za-bh-aTC"/>
+                            <constraint firstItem="uOm-tK-uLe" firstAttribute="top" secondItem="OqI-h1-0Nj" secondAttribute="top" constant="80" id="Mpd-z8-5K1"/>
                             <constraint firstItem="94p-pI-nbV" firstAttribute="centerX" secondItem="hIV-7c-7yI" secondAttribute="centerX" id="cKz-hn-5C8"/>
-                            <constraint firstItem="N6Y-35-y7K" firstAttribute="centerX" secondItem="hIV-7c-7yI" secondAttribute="centerX" id="keG-5z-caf"/>
-                            <constraint firstItem="94p-pI-nbV" firstAttribute="top" secondItem="MnC-gl-C2D" secondAttribute="bottom" constant="10" id="tJy-8o-1E6"/>
+                            <constraint firstItem="MnC-gl-C2D" firstAttribute="centerX" secondItem="hIV-7c-7yI" secondAttribute="centerX" id="k87-cd-vfx"/>
+                            <constraint firstItem="94p-pI-nbV" firstAttribute="top" secondItem="MnC-gl-C2D" secondAttribute="bottom" constant="15" id="puD-3M-2ww"/>
+                            <constraint firstItem="uOm-tK-uLe" firstAttribute="centerX" secondItem="hIV-7c-7yI" secondAttribute="centerX" id="z30-Yc-w3j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OqI-h1-0Nj"/>
                     </view>
                     <navigationItem key="navigationItem" id="W3X-u6-sd6">
                         <barButtonItem key="backBarButtonItem" title="Back" id="3DY-3o-TbU"/>
+                        <barButtonItem key="rightBarButtonItem" image="refresh" id="VSJ-Qs-nrp">
+                            <connections>
+                                <action selector="getCurrentUserCredits:" destination="Dc9-g1-5EC" id="cVA-nr-nQ0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="numberOfCreditsLabel" destination="5dM-As-Yjq" id="TUr-G2-TZN"/>
                         <segue destination="FIi-MY-aoO" kind="show" identifier="SendSegue" id="bYd-nj-GI8"/>
                         <segue destination="Ksf-1i-5lm" kind="show" identifier="ListSMSSegue" id="Guu-AD-GXK"/>
                     </connections>
@@ -86,7 +117,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yqg-Il-Uyq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3B8-Cf-BTU">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -99,4 +130,7 @@
             <point key="canvasLocation" x="-305" y="81"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="refresh" width="25" height="25"/>
+    </resources>
 </document>

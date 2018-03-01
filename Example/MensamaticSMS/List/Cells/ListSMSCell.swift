@@ -11,6 +11,11 @@ import MensamaticSMS
 
 class ListSMSCell: UITableViewCell {
     
+    var unknownColor: UIColor = UIColor(red: 135.0/255.0, green: 218.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+    var receivedColor: UIColor = UIColor(red: 15.0/255.0, green: 160.0/255.0, blue: 37.0/255.0, alpha: 1.0)
+    var failledColor: UIColor = UIColor(red: 255.0/255.0, green: 165.0/255.0, blue: 80.0/255.0, alpha: 1.0)
+    var canceledColor: UIColor = UIColor(red: 219.0/255.0, green: 30.0/255.0, blue: 82.0/255.0, alpha: 1.0)
+    
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
@@ -37,19 +42,24 @@ class ListSMSCell: UITableViewCell {
         }
         
         if let source = cellInfo["source"] as? String {
-            self.senderLabel.text = source
+            self.senderLabel.text = "Source: " + source
         }
         
         if let smsStatus = cellInfo["sent_status"] as? Int {
             var status: String = "Sent"
+            var color = self.unknownColor
             if smsStatus == sms_kSentStatus.received.rawValue {
                 status = "Received"
+                color = self.receivedColor
             } else if smsStatus == sms_kSentStatus.failed.rawValue {
                 status = "Failed"
+                color = self.failledColor
             } else if smsStatus == sms_kSentStatus.canceled.rawValue {
                 status = "Cancelled"
+                color = self.canceledColor
             }
             self.smsStateLabel.text = status
+            self.smsStateLabel.textColor = color
             self.smsStatus = smsStatus
         }
         

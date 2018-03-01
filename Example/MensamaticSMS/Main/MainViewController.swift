@@ -11,10 +11,13 @@ import MensamaticSMS
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var numberOfCreditsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "MENSAMATIC API SMS"
+        self.getCurrentCredits()
     }
 
     //-------------------------------------
@@ -28,13 +31,19 @@ class MainViewController: UIViewController {
         self.performSegue(withIdentifier: "ListSMSSegue", sender: nil)
     }
     
-    @IBAction func getCurrentUserCredits(_ sender: UIButton) {
+    @IBAction func getCurrentUserCredits(_ sender: UIBarButtonItem) {
+        self.getCurrentCredits()
+    }
+    
+    //-------------------------------------
+    // MARK: - Backend
+    //-------------------------------------
+    private func getCurrentCredits() {
         sms_currentUserCredits { (result) in
             switch result {
             case .successWithData(let data):
                 if let json = data as? [String:Any], let credits = json["credits"] as? Int {
-                    print(json)
-                    self.present(Common().showAlert(title: "Credits", message: "\(credits)"), animated: true, completion: nil)
+                    self.numberOfCreditsLabel.text = "\(credits)"
                 } else {
                     self.present(Common().showAlert(title: "Error", message: "There was a problem. Please, try again later."), animated: true, completion: nil)
                 }
