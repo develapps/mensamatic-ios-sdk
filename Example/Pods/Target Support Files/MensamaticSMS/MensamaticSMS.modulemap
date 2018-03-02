@@ -1,0 +1,6 @@
+framework module MensamaticSMS {
+  umbrella header "MensamaticSMS-umbrella.h"
+
+  export *
+  module * { export * }
+}
