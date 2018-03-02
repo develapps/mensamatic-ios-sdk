@@ -47,6 +47,7 @@ class FilterListViewController: UIViewController, FilterTextFieldCellProtocol, F
         self.tableView.dataSource = self
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.sectionHeaderHeight = 40
         self.tableView.reloadData()
     }
     
@@ -111,7 +112,7 @@ class FilterListViewController: UIViewController, FilterTextFieldCellProtocol, F
     // MARK: - StatusCell Protocol
     //-------------------------------------
     func switchChanged(isActive: Bool, sentStatus: Int) {
-        if isActive {
+        if !isActive {
             self.filter?.sentStatus = nil
         } else {
             self.filter?.sentStatus = sentStatus
@@ -161,13 +162,13 @@ extension FilterListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Destinatario"
+            return "   Phone and source"
         case 1:
-            return "Date"
+            return "   Date"
         case 2:
-            return "Sent"
+            return "   Sent (select one)"
         case 3:
-            return "Status"
+            return "   Status (select one)"
         default:
             return ""
         }

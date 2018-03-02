@@ -16,7 +16,7 @@ protocol CancelScheduledSMSProtocol {
 class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, FilterListDataProtocol {
 
     @IBOutlet weak var noResultsLabel: UILabel!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+//    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
     var cells: [[String:Any]] = []
@@ -53,7 +53,7 @@ class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, Filte
         } else if sender.selectedSegmentIndex == 1 {
             self.loadIncomingSMS()
         }
-        self.segmentedControl.isUserInteractionEnabled = false
+//        self.segmentedControl.isUserInteractionEnabled = false
     }
     
     //-------------------------------------
@@ -81,7 +81,7 @@ class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, Filte
                 
             }
             self.updateTableView()
-            self.segmentedControl.isUserInteractionEnabled = true
+//            self.segmentedControl.isUserInteractionEnabled = true
         }
     }
     
@@ -98,7 +98,7 @@ class ListSMSViewController: UIViewController, CancelScheduledSMSProtocol, Filte
                 
             }
             self.updateTableView()
-            self.segmentedControl.isUserInteractionEnabled = true
+//            self.segmentedControl.isUserInteractionEnabled = true
         }
     }
     
@@ -170,16 +170,16 @@ extension ListSMSViewController: UITableViewDataSource {
     }
     
     @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.segmentedControl.selectedSegmentIndex == 0 {
+//        if self.segmentedControl.selectedSegmentIndex == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ListSMSCell", for: indexPath) as! ListSMSCell
             cell.configureForCell(cells[indexPath.row])
             cell.delegate = self
             return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ListIncomingSMSCell", for: indexPath) as! ListIncomingSMSCell
-            cell.configureForCell(cells[indexPath.row])
-            return cell
-        }
+//        } else {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "ListIncomingSMSCell", for: indexPath) as! ListIncomingSMSCell
+//            cell.configureForCell(cells[indexPath.row])
+//            return cell
+//        }
     }
     
 }

@@ -27,9 +27,6 @@ class LoginViewController: UIViewController {
         
         self.doLoginBackend(userName: userName, pass: pass)
     }
-    @IBAction func doMyLogin(_ sender: UIButton) {
-        self.doLoginBackend(userName: "apiTesting", pass: "Develapps18")
-    }
     
     //--------------------------------------------------------
     // MARK: Prepare For Segue

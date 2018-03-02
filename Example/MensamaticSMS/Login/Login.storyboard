@@ -51,13 +51,6 @@
                                     <constraint firstAttribute="height" constant="150" id="2Z2-90-S9z"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xoy-DP-F8h">
-                                <rect key="frame" x="158" y="428.5" width="58" height="30"/>
-                                <state key="normal" title="My login"/>
-                                <connections>
-                                    <action selector="doMyLogin:" destination="pD9-bN-JkH" eventType="touchUpInside" id="jlT-g8-0zZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -65,10 +58,8 @@
                             <constraint firstItem="fzE-Ox-rcK" firstAttribute="centerY" secondItem="ONo-Oz-hOQ" secondAttribute="centerY" id="78b-Ug-h5x"/>
                             <constraint firstItem="Rin-Gw-Utg" firstAttribute="leading" secondItem="nUz-0u-boO" secondAttribute="leading" constant="50" id="DAG-5F-Cga"/>
                             <constraint firstItem="Rin-Gw-Utg" firstAttribute="top" secondItem="nUz-0u-boO" secondAttribute="top" constant="50" id="GTr-25-1np"/>
-                            <constraint firstItem="Xoy-DP-F8h" firstAttribute="centerX" secondItem="ONo-Oz-hOQ" secondAttribute="centerX" id="Os9-To-T3P"/>
                             <constraint firstItem="fzE-Ox-rcK" firstAttribute="leading" secondItem="nUz-0u-boO" secondAttribute="leading" constant="50" id="Piq-Vp-PVc"/>
                             <constraint firstItem="nUz-0u-boO" firstAttribute="trailing" secondItem="Rin-Gw-Utg" secondAttribute="trailing" constant="50" id="Zh8-iq-VhA"/>
-                            <constraint firstItem="Xoy-DP-F8h" firstAttribute="top" secondItem="fzE-Ox-rcK" secondAttribute="bottom" constant="20" id="iuq-s9-cY1"/>
                             <constraint firstItem="fzE-Ox-rcK" firstAttribute="centerX" secondItem="ONo-Oz-hOQ" secondAttribute="centerX" id="nL3-pb-qOe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nUz-0u-boO"/>

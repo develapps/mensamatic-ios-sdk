@@ -336,6 +336,11 @@ public func sms_listSentSMS(id: String?, destination: String?, source: String?, 
     guard var components = URLComponents(string: APIEndpointUrl.listSentSMS.SMS_endpointUrl()) else { return }
     components.queryItems = []
     
+    if let id = id {
+        let destinationItem = URLQueryItem(name: "id", value: id)
+        components.queryItems?.append(destinationItem)
+    }
+    
     if let destination = destination {
         let destinationItem = URLQueryItem(name: "destination", value: destination)
         components.queryItems?.append(destinationItem)

@@ -46,8 +46,10 @@ class FilterTextFieldCell: UITableViewCell, UITextFieldDelegate {
         self.secondTextField.inputAccessoryView = toolbar
         
         if type == .text {
-            self.firstTitleLabel.text = "Destination"
+            self.firstTitleLabel.text = "Phone"
+            self.firstTextField.placeholder = "+346********"
             self.secondTitleLabel.text = "Source"
+            self.secondTextField.placeholder = "MENSAMATIC"
             
             self.firstTextField.delegate = self
             self.secondTextField.delegate = self

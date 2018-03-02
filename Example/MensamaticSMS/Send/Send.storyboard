@@ -83,10 +83,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iBc-k1-JRe">
-                                <rect key="frame" x="20" y="488" width="280" height="60"/>
+                                <rect key="frame" x="20" y="473" width="280" height="75"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ydy-ws-r08">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="60"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ydy-ws-r08">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kii-Te-ahL">
                                                 <rect key="frame" x="0.0" y="0.0" width="95" height="30"/>
@@ -96,7 +96,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aQ-2f-nFB">
-                                                <rect key="frame" x="0.0" y="30" width="95" height="30"/>
+                                                <rect key="frame" x="0.0" y="45" width="95" height="30"/>
                                                 <state key="normal" title="Cost Per SMS"/>
                                                 <connections>
                                                     <action selector="calculateCostPerSMS:" destination="baF-Vn-l69" eventType="touchUpInside" id="eLQ-3z-HS6"/>
@@ -104,8 +104,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Guj-qW-RNI">
-                                        <rect key="frame" x="115" y="0.0" width="165" height="60"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Guj-qW-RNI">
+                                        <rect key="frame" x="115" y="0.0" width="165" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Zh-xm-LGQ">
                                                 <rect key="frame" x="16.5" y="0.0" width="132" height="30"/>
@@ -115,7 +115,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWx-FP-Eyh">
-                                                <rect key="frame" x="4.5" y="30" width="156" height="30"/>
+                                                <rect key="frame" x="4.5" y="45" width="156" height="30"/>
                                                 <state key="normal" title="Send Certificated SMS"/>
                                                 <connections>
                                                     <action selector="sendCertificatedSMS:" destination="baF-Vn-l69" eventType="touchUpInside" id="25D-zd-KiM"/>
